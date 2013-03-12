@@ -11,30 +11,26 @@
 @implementation AppDelegate
 
 
-
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 - (void)applicationDidFinishLaunching:(UIApplication *)application{
     NSUInteger x,y;
-    CGRect viewRectangle = CGRectMake(100, 50, 800, 300);
+    CGRect viewRectangle = CGRectMake(150, 36, 695, 316);
     UIView *indivNoteView;
     float numOfCellsWidth = 4;
     float numOfCellsHeight = 30;
     
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    _staff = [[UIView alloc] initWithFrame:viewRectangle ];
     
-    [_window addSubview:_staff];
-
     
     for(x=0; x < numOfCellsWidth; ++x){
         
         for(y=0; y< numOfCellsHeight; ++y){
            indivNoteView = [[NoteView alloc] initWithFrame: [CGRectMake(viewRectangle.origin.x + x * viewRectangle.size.width / numOfCellsWidth, viewRectangle.origin.y + y * viewRectangle.size.height / numOfCellsHeight, x * viewRectangle.size.width / numOfCellsWidth, y * viewRectangle.size.height / numOfCellsHeight)]];
             
-            [indivNoteView setMultipleTouchEnabled:NO addGestureRecognizer];
+            [indivNoteView setMultipleTouchEnabled:NO];
             
             [_window addSubview:indivNoteView];
             

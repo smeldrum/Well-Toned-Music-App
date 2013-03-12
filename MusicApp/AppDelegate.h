@@ -18,6 +18,4 @@
 
 @property (strong, nonatomic) ViewController *viewController;
 
-@property (strong, nonatomic) UIView *staff;
-
 @end

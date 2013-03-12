@@ -18,9 +18,10 @@
 		4929C7E416EE9C2E00E06A93 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4929C7E316EE9C2E00E06A93 /* Default-568h@2x.png */; };
 		4929C7E716EE9C2E00E06A93 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4929C7E516EE9C2E00E06A93 /* MainStoryboard_iPhone.storyboard */; };
 		4929C7EA16EE9C2E00E06A93 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4929C7E816EE9C2E00E06A93 /* MainStoryboard_iPad.storyboard */; };
-		4929C7ED16EE9C2E00E06A93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4929C7EC16EE9C2E00E06A93 /* ViewController.m */; };
 		4929C7F716EEA8F400E06A93 /* staff.png in Resources */ = {isa = PBXBuildFile; fileRef = 4929C7F616EEA8F400E06A93 /* staff.png */; };
 		4929C7F916EEAE6D00E06A93 /* GrandStaff.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4929C7F816EEAE6D00E06A93 /* GrandStaff.jpeg */; };
+		7127D77616EF744700620C45 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7127D77516EF744700620C45 /* NoteView.m */; };
+		7191761316EF9A2A00B38697 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7191761216EF9A2A00B38697 /* NoteViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,10 +40,12 @@
 		4929C7E316EE9C2E00E06A93 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4929C7E616EE9C2E00E06A93 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		4929C7E916EE9C2E00E06A93 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		4929C7EB16EE9C2E00E06A93 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4929C7EC16EE9C2E00E06A93 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4929C7F616EEA8F400E06A93 /* staff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = staff.png; sourceTree = "<group>"; };
 		4929C7F816EEAE6D00E06A93 /* GrandStaff.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrandStaff.jpeg; sourceTree = "<group>"; };
+		7127D77416EF744700620C45 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
+		7127D77516EF744700620C45 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
+		7191761116EF9A2A00B38697 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteViewController.h; path = ../NoteViewController.h; sourceTree = "<group>"; };
+		7191761216EF9A2A00B38697 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteViewController.m; path = ../NoteViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +94,12 @@
 			children = (
 				4929C7DD16EE9C2E00E06A93 /* AppDelegate.m */,
 				4929C7DC16EE9C2E00E06A93 /* AppDelegate.h */,
+				7127D77416EF744700620C45 /* NoteView.h */,
+				7127D77516EF744700620C45 /* NoteView.m */,
+				7191761116EF9A2A00B38697 /* NoteViewController.h */,
+				7191761216EF9A2A00B38697 /* NoteViewController.m */,
 				4929C7E516EE9C2E00E06A93 /* MainStoryboard_iPhone.storyboard */,
 				4929C7E816EE9C2E00E06A93 /* MainStoryboard_iPad.storyboard */,
-				4929C7EB16EE9C2E00E06A93 /* ViewController.h */,
-				4929C7EC16EE9C2E00E06A93 /* ViewController.m */,
 				4929C7D416EE9C2E00E06A93 /* Supporting Files */,
 			);
 			path = MusicApp;
@@ -187,7 +192,8 @@
 			files = (
 				4929C7DA16EE9C2E00E06A93 /* main.m in Sources */,
 				4929C7DE16EE9C2E00E06A93 /* AppDelegate.m in Sources */,
-				4929C7ED16EE9C2E00E06A93 /* ViewController.m in Sources */,
+				7127D77616EF744700620C45 /* NoteView.m in Sources */,
+				7191761316EF9A2A00B38697 /* NoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +326,7 @@
 				4929C7F216EE9C2E00E06A93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
