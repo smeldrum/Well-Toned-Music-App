@@ -10,7 +10,10 @@
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+{
+    IBOutlet UIWindow *window;
+    IBOutlet ViewController *myViewController;
+}
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ViewController *viewController;
 

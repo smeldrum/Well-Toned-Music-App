@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 @class ScrollView;
 
-@interface ViewController : UIViewController
+@interface MyViewController : UIViewController
+{
+    IBOutlet UIScrollView *scrollView; // holds five small images to scroll horizontally
+ 
+}
 
-@property (strong, nonatomic) IBOutlet UIScrollView * scrollView;
-
+@property (nonatomic, retain) UIView *scrollView;
 @end

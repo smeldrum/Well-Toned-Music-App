@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		499735CD1703AD1D001E9178 /* sloth.png in Resources */ = {isa = PBXBuildFile; fileRef = 499735CC1703AD1D001E9178 /* sloth.png */; };
 		49DBBBFA16F27654001CB48F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DBBBF916F27654001CB48F /* UIKit.framework */; };
 		49DBBBFC16F27654001CB48F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DBBBFB16F27654001CB48F /* Foundation.framework */; };
 		49DBBBFE16F27654001CB48F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DBBBFD16F27654001CB48F /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		499735CC1703AD1D001E9178 /* sloth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sloth.png; sourceTree = "<group>"; };
 		49DBBBF616F27654001CB48F /* project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DBBBF916F27654001CB48F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49DBBBFB16F27654001CB48F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,8 +94,6 @@
 				49DBBC2216F27759001CB48F /* ScrollView.m */,
 				49DBBC0816F27654001CB48F /* AppDelegate.h */,
 				49DBBC0916F27654001CB48F /* AppDelegate.m */,
-				49DBBC1116F27654001CB48F /* MainStoryboard_iPhone.storyboard */,
-				49DBBC1416F27654001CB48F /* MainStoryboard_iPad.storyboard */,
 				49DBBC1716F27654001CB48F /* ViewController.h */,
 				49DBBC1816F27654001CB48F /* ViewController.m */,
 				49DBBC0016F27654001CB48F /* Supporting Files */,
@@ -104,6 +104,9 @@
 		49DBBC0016F27654001CB48F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49DBBC1116F27654001CB48F /* MainStoryboard_iPhone.storyboard */,
+				49DBBC1416F27654001CB48F /* MainStoryboard_iPad.storyboard */,
+				499735CC1703AD1D001E9178 /* sloth.png */,
 				49DBBC0116F27654001CB48F /* project1-Info.plist */,
 				49DBBC0216F27654001CB48F /* InfoPlist.strings */,
 				49DBBC0516F27654001CB48F /* main.m */,
@@ -172,6 +175,7 @@
 				49DBBC1016F27654001CB48F /* Default-568h@2x.png in Resources */,
 				49DBBC1316F27654001CB48F /* MainStoryboard_iPhone.storyboard in Resources */,
 				49DBBC1616F27654001CB48F /* MainStoryboard_iPad.storyboard in Resources */,
+				499735CD1703AD1D001E9178 /* sloth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +322,7 @@
 				49DBBC1E16F27654001CB48F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
