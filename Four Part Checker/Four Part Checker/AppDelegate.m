@@ -1,32 +1,31 @@
 //
 //  AppDelegate.m
-//  project1
+//  Four Part Checker
 //
-//  Created by Zoe Sobin on 3/14/13.
-//  Copyright (c) 2013 Zoe Sobin. All rights reserved.
+//  Created by Spencer Meldrum on 4/2/13.
+//  Copyright (c) 2013 Spencer Meldrum. All rights reserved.
 //
 
 #import "AppDelegate.h"
+
 #import "ViewController.h"
 
 @implementation AppDelegate
 
-
-@synthesize window;
-@synthesize viewController;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
-    window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    viewController = [[MyViewController alloc] init];
-    self.window.rootViewController = viewController;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+    } else {
+        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+    }
+    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    
-
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
