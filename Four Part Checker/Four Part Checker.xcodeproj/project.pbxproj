@@ -26,6 +26,11 @@
 		71794070170B148900810BA0 /* Four_Part_CheckerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7179406F170B148900810BA0 /* Four_Part_CheckerTests.m */; };
 		7179407E170B289500810BA0 /* StaffView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7179407D170B289500810BA0 /* StaffView.m */; };
 		71794080170B2C6600810BA0 /* sloth.png in Resources */ = {isa = PBXBuildFile; fileRef = 7179407F170B2C6600810BA0 /* sloth.png */; };
+		71794082170B814500810BA0 /* musicstaff.png in Resources */ = {isa = PBXBuildFile; fileRef = 71794081170B814500810BA0 /* musicstaff.png */; };
+		71794084170B834400810BA0 /* staff.png in Resources */ = {isa = PBXBuildFile; fileRef = 71794083170B834400810BA0 /* staff.png */; };
+		71C55F61170E25C100D090BB /* staff2.png in Resources */ = {isa = PBXBuildFile; fileRef = 71C55F60170E25C100D090BB /* staff2.png */; };
+		71CCB420170DFA6C0024D74D /* StaffData.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CCB41F170DFA6C0024D74D /* StaffData.m */; };
+		71CCB423170DFAD30024D74D /* ChordData.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CCB422170DFAD30024D74D /* ChordData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,13 @@
 		7179407C170B289500810BA0 /* StaffView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffView.h; sourceTree = "<group>"; };
 		7179407D170B289500810BA0 /* StaffView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaffView.m; sourceTree = "<group>"; };
 		7179407F170B2C6600810BA0 /* sloth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sloth.png; sourceTree = "<group>"; };
+		71794081170B814500810BA0 /* musicstaff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicstaff.png; sourceTree = "<group>"; };
+		71794083170B834400810BA0 /* staff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = staff.png; sourceTree = "<group>"; };
+		71C55F60170E25C100D090BB /* staff2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = staff2.png; sourceTree = "<group>"; };
+		71CCB41E170DFA6C0024D74D /* StaffData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffData.h; sourceTree = "<group>"; };
+		71CCB41F170DFA6C0024D74D /* StaffData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaffData.m; sourceTree = "<group>"; };
+		71CCB421170DFAD30024D74D /* ChordData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordData.h; sourceTree = "<group>"; };
+		71CCB422170DFAD30024D74D /* ChordData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +140,10 @@
 				7179404B170B148800810BA0 /* AppDelegate.m */,
 				71794053170B148800810BA0 /* ViewController.h */,
 				71794054170B148800810BA0 /* ViewController.m */,
+				71CCB421170DFAD30024D74D /* ChordData.h */,
+				71CCB422170DFAD30024D74D /* ChordData.m */,
+				71CCB41E170DFA6C0024D74D /* StaffData.h */,
+				71CCB41F170DFA6C0024D74D /* StaffData.m */,
 				71794056170B148800810BA0 /* ViewController_iPhone.xib */,
 				71794059170B148800810BA0 /* ViewController_iPad.xib */,
 				7179407C170B289500810BA0 /* StaffView.h */,
@@ -140,8 +156,11 @@
 		71794042170B148800810BA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71C55F60170E25C100D090BB /* staff2.png */,
 				71794043170B148800810BA0 /* Four Part Checker-Info.plist */,
 				71794044170B148800810BA0 /* InfoPlist.strings */,
+				71794083170B834400810BA0 /* staff.png */,
+				71794081170B814500810BA0 /* musicstaff.png */,
 				7179407F170B2C6600810BA0 /* sloth.png */,
 				71794047170B148800810BA0 /* main.m */,
 				71794049170B148800810BA0 /* Four Part Checker-Prefix.pch */,
@@ -249,6 +268,9 @@
 				71794058170B148800810BA0 /* ViewController_iPhone.xib in Resources */,
 				7179405B170B148800810BA0 /* ViewController_iPad.xib in Resources */,
 				71794080170B2C6600810BA0 /* sloth.png in Resources */,
+				71794082170B814500810BA0 /* musicstaff.png in Resources */,
+				71794084170B834400810BA0 /* staff.png in Resources */,
+				71C55F61170E25C100D090BB /* staff2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +309,8 @@
 				7179404C170B148800810BA0 /* AppDelegate.m in Sources */,
 				71794055170B148800810BA0 /* ViewController.m in Sources */,
 				7179407E170B289500810BA0 /* StaffView.m in Sources */,
+				71CCB420170DFA6C0024D74D /* StaffData.m in Sources */,
+				71CCB423170DFAD30024D74D /* ChordData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +501,7 @@
 				71794075170B148900810BA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71794076170B148900810BA0 /* Build configuration list for PBXNativeTarget "Four Part CheckerTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +510,7 @@
 				71794078170B148900810BA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

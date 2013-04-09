@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class NoteScrollView;
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController 
     
-}
+
 @end

@@ -10,15 +10,15 @@
 
 @implementation StaffView
 
-const CGFloat kScrollObjHeight  = 335;
-const CGFloat kScrollObjWidth   = 99;
-const NSUInteger kNumImages     = 5;
+const CGFloat kScrollObjHeight  = 591;
+const CGFloat kScrollObjWidth   = 30;
+const NSUInteger kNumImages     = 50;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setBackgroundColor:[UIColor blackColor]];
+        [self setBackgroundColor:[UIColor clearColor]];
         [self setCanCancelContentTouches:NO];
         self.indicatorStyle = UIScrollViewIndicatorStyleWhite;
         self.clipsToBounds = YES;        // default is NO, we want to restrict drawing within our scrollview
@@ -32,15 +32,9 @@ const NSUInteger kNumImages     = 5;
         NSUInteger i;
         for (i = 1; i <= kNumImages; i++)
         {
-            NSString *imageName = [NSString stringWithFormat:@"sloth.png"];
-            UIImage *image = [UIImage imageNamed:imageName];
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScrollObjWidth, kScrollObjHeight)];
             
             // setup each frame to a default height and width, it will be properly placed when we call "updateScrollList"
-            CGRect rect = imageView.frame;
-            rect.size.height = kScrollObjHeight;
-            rect.size.width = kScrollObjWidth;
-            imageView.frame = rect;
             imageView.tag = i;  // tag our images for later use when we place them in serial fashion
             [self addSubview:imageView];
             
