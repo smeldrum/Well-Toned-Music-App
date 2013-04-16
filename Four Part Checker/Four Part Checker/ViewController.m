@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "StaffView.h"
+#import "StaffData.h"
 @class StaffView;
 
 @implementation ViewController
@@ -57,7 +58,8 @@
 }
 
 - (void)allocateData{
-    
+    StaffData * data = [[StaffData alloc] init];
+    [data changeChordNote:3 withLine:1 withIndex:0];
 }
 
 @end

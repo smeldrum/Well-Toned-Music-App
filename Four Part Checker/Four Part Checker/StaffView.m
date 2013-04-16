@@ -7,6 +7,7 @@
 //
 
 #import "StaffView.h"
+#import "StaffData.h"
 
 @implementation StaffView
 

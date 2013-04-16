@@ -14,7 +14,6 @@
 @synthesize tenor;
 @synthesize bass;
 -(id)init {
-    self = [ChordData alloc];
     soprano = 0;
     alto = 0;
     tenor = 0;

@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+@interface StaffData : NSObject
 
-@interface StaffData : NSObject {
-
-}
+-(void)changeChordNote:(int)note withLine:(int)line withIndex:(int)chord;
 @property NSMutableArray * noteArray;
 @end

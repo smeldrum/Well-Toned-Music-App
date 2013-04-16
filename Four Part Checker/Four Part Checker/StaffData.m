@@ -13,11 +13,10 @@
 @synthesize noteArray;
 
 -(id)init{
-    self = [StaffData alloc];
-    self.noteArray = [NSMutableArray alloc];
+    self.noteArray = [[NSMutableArray alloc] init];
     int i;
     for(i = 0; i<50; i++){
-        ChordData * chord = [ChordData init];
+        ChordData * chord = [[ChordData alloc]init];
         self.noteArray[i] = chord;
     }
     return self;
