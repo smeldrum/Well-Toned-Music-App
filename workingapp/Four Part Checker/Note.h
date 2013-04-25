@@ -11,5 +11,6 @@
 @interface Note: UIButton
 @property (nonatomic, assign) UIEdgeInsets touchcircle;
 @property (nonatomic, assign) NSInteger index;
+@property (nonatomic, assign) int voice;
 
 @end

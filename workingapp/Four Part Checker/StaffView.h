@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface StaffView : UIScrollView
+@property NSMutableArray * soprano;
+@property NSMutableArray * alto;
+@property NSMutableArray * tenor;
+@property NSMutableArray * bass;
+@property int currentvoice;
+
 -(void)clearStaff;
+-(void)checkStaff;
 @end

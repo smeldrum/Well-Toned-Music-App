@@ -16,9 +16,4 @@
 
 @property (strong, nonatomic) ViewController *viewController;
 
-@property  NSArray* soprano;
-@property  NSArray* alto;
-@property  NSArray* tenor;
-@property  NSArray* bass;
-
 @end

@@ -10,6 +10,8 @@
 		4983EA6B1722FCA100482FE5 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 4983EA6A1722FCA100482FE5 /* Note.m */; };
 		4983EA741727658000482FE5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4983EA731727658000482FE5 /* Crashlytics.framework */; };
 		4983EA761728BE5200482FE5 /* red_q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA751728BE5200482FE5 /* red_q_note.png */; };
+		4983EA7817297C5700482FE5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA7717297C5700482FE5 /* logo.png */; };
+		4983EA7A17297D9C00482FE5 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA7917297D9C00482FE5 /* logo1.png */; };
 		499735D517175FDB001E9178 /* q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 499735D417175FDB001E9178 /* q_note.png */; };
 		7179403C170B148800810BA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403B170B148800810BA0 /* UIKit.framework */; };
 		7179403E170B148800810BA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403D170B148800810BA0 /* Foundation.framework */; };
@@ -52,6 +54,8 @@
 		4983EA6A1722FCA100482FE5 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		4983EA731727658000482FE5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		4983EA751728BE5200482FE5 /* red_q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_q_note.png; sourceTree = "<group>"; };
+		4983EA7717297C5700482FE5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		4983EA7917297D9C00482FE5 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
 		499735D417175FDB001E9178 /* q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q_note.png; sourceTree = "<group>"; };
 		71794038170B148800810BA0 /* Four Part Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Four Part Checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7179403B170B148800810BA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -161,6 +165,7 @@
 				7179407D170B289500810BA0 /* StaffView.m */,
 				4983EA691722FCA100482FE5 /* Note.h */,
 				4983EA6A1722FCA100482FE5 /* Note.m */,
+				4983EA7717297C5700482FE5 /* logo.png */,
 				71794042170B148800810BA0 /* Supporting Files */,
 			);
 			path = "Four Part Checker";
@@ -169,6 +174,7 @@
 		71794042170B148800810BA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4983EA7917297D9C00482FE5 /* logo1.png */,
 				4983EA751728BE5200482FE5 /* red_q_note.png */,
 				499735D417175FDB001E9178 /* q_note.png */,
 				71C55F60170E25C100D090BB /* staff2.png */,
@@ -289,6 +295,8 @@
 				71C55F61170E25C100D090BB /* staff2.png in Resources */,
 				499735D517175FDB001E9178 /* q_note.png in Resources */,
 				4983EA761728BE5200482FE5 /* red_q_note.png in Resources */,
+				4983EA7817297C5700482FE5 /* logo.png in Resources */,
+				4983EA7A17297D9C00482FE5 /* logo1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

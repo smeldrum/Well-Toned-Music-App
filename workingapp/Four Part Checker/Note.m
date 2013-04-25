@@ -22,6 +22,7 @@
         _touchcircle.top = 73;
         _touchcircle.right = 0;
         _touchcircle.bottom = 0;
+
     }
     return self;
 }

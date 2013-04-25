@@ -12,10 +12,7 @@
 #import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
-@synthesize soprano;
-@synthesize alto;
-@synthesize tenor;
-@synthesize bass;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

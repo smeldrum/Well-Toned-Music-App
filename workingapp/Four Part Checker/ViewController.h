@@ -12,4 +12,5 @@
 
 @interface ViewController : UIViewController 
 @property StaffView* staff;
+@property int currentvoice;
 @end
