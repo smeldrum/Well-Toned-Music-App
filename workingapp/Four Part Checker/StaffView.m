@@ -84,7 +84,7 @@ const NSUInteger kNumImages     = 1000;
 
 -(void)addNote: (UIButton*)sender withevent: event
 {
-    
+    NSLog(@"hit");
     //check to see if a note already exists in array[sender.tag], if it doesn't:
     if (currentvoice==0 && _bass[sender.tag]!=[NSNumber numberWithInt:0]) return;
     else if (currentvoice==1 && _tenor[sender.tag]!=[NSNumber numberWithInt:0]) return;
@@ -184,19 +184,24 @@ int detectValue(int y)
 
 -(void)clearStaff
 {
-    for (int i=0; i<kNumImages;i++)
-    {
-        UIButton *beat = (UIButton *)[self viewWithTag:i];
-        [[beat subviews]makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        
-        _soprano[i]=[NSNumber numberWithInt:0];
-        _alto[i] = [NSNumber numberWithInt:0];
-        _tenor[i] = [NSNumber numberWithInt:0];
-        _bass[i] = [NSNumber numberWithInt:0];
-        
-        [[beat layer] setBorderWidth:0.0f];
 
-    }
+        for(UIButton *subview in [self subviews]) {
+            for(Note *notes in [subview subviews]) {
+                [_soprano replaceObjectAtIndex:notes.index withObject:[NSNumber numberWithInt:0]];
+                [_alto replaceObjectAtIndex:notes.index withObject:[NSNumber numberWithInt:0]];
+                [_tenor replaceObjectAtIndex:notes.index withObject:[NSNumber numberWithInt:0]];
+                [_bass replaceObjectAtIndex:notes.index withObject:[NSNumber numberWithInt:0]];
+                [notes removeFromSuperview];
+            }
+            [[subview layer] setBorderWidth:0.0f];
+        }
+
+        
+
+
+        
+
+
 }
 -(void)checkStaff
 {

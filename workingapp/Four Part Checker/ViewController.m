@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "StaffView.h"
 #import "StaffData.h"
+#import <QuartzCore/QuartzCore.h>
 @class StaffView;
 @implementation ViewController
 
@@ -36,31 +37,39 @@
     [self.view addSubview: _staff];
     
     _currentvoice = 3;
-    
+
     UIButton * button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button1.frame = CGRectMake(100, 700, 50, 30);
+    button1.tag = 3;
+
     [button1 setTitle:@"S" forState: UIControlStateNormal];
     [button1 addTarget:self action:@selector(changeVoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
     
     UIButton * button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button2.frame = CGRectMake(155, 700, 50, 30);
+    button2.tag = 2;
     [button2 setTitle:@"A" forState: UIControlStateNormal];
     [button2 addTarget:self action:@selector(changeVoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
     
     UIButton * button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button3.frame = CGRectMake(210, 700, 50, 30);
+    button3.tag= 1;
     [button3 setTitle:@"T" forState: UIControlStateNormal];
     [button3 addTarget:self action:@selector(changeVoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
     
     UIButton * button4 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button4.frame = CGRectMake(265, 700, 50, 30);
+    button4.tag = 0;
     [button4 setTitle:@"B" forState: UIControlStateNormal];
     [button4 addTarget:self action:@selector(changeVoice:) forControlEvents:UIControlEventTouchUpInside];
+    [[button4 layer] setBorderWidth:1.0f];
+    [[button4 layer] setBorderColor:[UIColor greenColor].CGColor];
     [self.view addSubview:button4];
     
+
     
     UIButton * button5 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button5.frame = CGRectMake(330, 700, 50, 30);
@@ -74,8 +83,6 @@
     [checkbutton setTitle:@"Check" forState: UIControlStateNormal];
     [checkbutton addTarget:self action:@selector(checkStaff:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:checkbutton];
-    
-
     
     
     UIImageView * logo1 = [[UIImageView alloc] initWithFrame: CGRectMake(830, 645, 163, 119)];
@@ -97,13 +104,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)changeVoice: (id)sender
+-(void)changeVoice: (UIButton*)sender
 {
-    if ([[sender currentTitle] isEqualToString:@"S"]) _currentvoice = 3;
-    else if ([[sender currentTitle] isEqualToString:@"A"]) _currentvoice = 2;
-    else if ([[sender currentTitle]isEqualToString:@"T"]) _currentvoice = 1;
-    else if ([[sender currentTitle] isEqualToString:@"B"]) _currentvoice = 0;
+    for (UIButton* button in self.view.subviews){
+        if ([sender isEqual:button]){
+            [[button layer] setBorderWidth:1.0f];
+            [[button layer] setBorderColor:[UIColor greenColor].CGColor];
+        }
+        else{
+            [[button layer] setBorderWidth:0.0f];
+        }
+    }
+    _currentvoice = sender.tag;
     _staff.currentvoice=_currentvoice;
+    
     NSLog(@"%@",[sender currentTitle]);
 }
 - (void)allocateData{
