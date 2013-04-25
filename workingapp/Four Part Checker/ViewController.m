@@ -117,8 +117,6 @@
     }
     _currentvoice = sender.tag;
     _staff.currentvoice=_currentvoice;
-    
-    NSLog(@"%@",[sender currentTitle]);
 }
 - (void)allocateData{
     StaffData * data = [[StaffData alloc] init];

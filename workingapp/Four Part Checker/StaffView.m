@@ -84,7 +84,7 @@ const NSUInteger kNumImages     = 1000;
 
 -(void)addNote: (UIButton*)sender withevent: event
 {
-    NSLog(@"hit");
+
     //check to see if a note already exists in array[sender.tag], if it doesn't:
     if (currentvoice==0 && _bass[sender.tag]!=[NSNumber numberWithInt:0]) return;
     else if (currentvoice==1 && _tenor[sender.tag]!=[NSNumber numberWithInt:0]) return;
@@ -176,9 +176,7 @@ int detectValue(int y)
         else if (sender.voice==3) _soprano[sender.index]=[NSNumber numberWithInt:0];
         [sender removeFromSuperview];
     }
-    NSLog(@"%@, %@, %@, %@", _bass[sender.index], _tenor[sender.index], _alto[sender.index], _soprano[sender.index]);
-
-    NSLog(@"%i",sender.index);
+ 
 
 }
 
@@ -195,12 +193,6 @@ int detectValue(int y)
             }
             [[subview layer] setBorderWidth:0.0f];
         }
-
-        
-
-
-        
-
 
 }
 -(void)checkStaff
