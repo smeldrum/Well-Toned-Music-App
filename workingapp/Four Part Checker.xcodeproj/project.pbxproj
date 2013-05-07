@@ -54,10 +54,9 @@
 		4983EACD17388A8A00482FE5 /* Piano.ff.E2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EACC17388A8A00482FE5 /* Piano.ff.E2.aiff */; };
 		4983EACF17388B8400482FE5 /* Piano.ff.Db3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EACE17388B8400482FE5 /* Piano.ff.Db3.aiff */; };
 		4983EAD11738964000482FE5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4983EAD01738964000482FE5 /* AVFoundation.framework */; };
-		498DDB3E1738A1C5007C2231 /* thriftshop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB3D1738A1C5007C2231 /* thriftshop.mp3 */; };
-		498DDB401738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB3F1738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 */; };
 		498DDB431739440E007C2231 /* HarmonyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 498DDB421739440E007C2231 /* HarmonyPlayer.m */; };
 		498DDB4517394AE0007C2231 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498DDB4417394AE0007C2231 /* AudioToolbox.framework */; };
+		498DDB4F17398326007C2231 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB4E17398326007C2231 /* icon.png */; };
 		499735D517175FDB001E9178 /* q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 499735D417175FDB001E9178 /* q_note.png */; };
 		7179403C170B148800810BA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403B170B148800810BA0 /* UIKit.framework */; };
 		7179403E170B148800810BA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403D170B148800810BA0 /* Foundation.framework */; };
@@ -144,13 +143,12 @@
 		4983EACC17388A8A00482FE5 /* Piano.ff.E2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.E2.aiff; sourceTree = "<group>"; };
 		4983EACE17388B8400482FE5 /* Piano.ff.Db3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Db3.aiff; sourceTree = "<group>"; };
 		4983EAD01738964000482FE5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		498DDB3D1738A1C5007C2231 /* thriftshop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thriftshop.mp3; sourceTree = "<group>"; };
-		498DDB3F1738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nicki Minaj - Super Bass.mp3"; sourceTree = "<group>"; };
 		498DDB411739440E007C2231 /* HarmonyPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarmonyPlayer.h; sourceTree = "<group>"; };
 		498DDB421739440E007C2231 /* HarmonyPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HarmonyPlayer.m; sourceTree = "<group>"; };
 		498DDB4417394AE0007C2231 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		498DDB4E17398326007C2231 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		499735D417175FDB001E9178 /* q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q_note.png; sourceTree = "<group>"; };
-		71794038170B148800810BA0 /* Four Part Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Four Part Checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71794038170B148800810BA0 /* Well Toned.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Well Toned.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7179403B170B148800810BA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7179403D170B148800810BA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7179403F170B148800810BA0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -254,9 +252,7 @@
 				4983EA8D173887EB00482FE5 /* Piano.ff.Eb5.aiff */,
 				4983EA8B173887EB00482FE5 /* Piano.ff.E5.aiff */,
 				4983EA8E173887EB00482FE5 /* Piano.ff.F5.aiff */,
-				498DDB3F1738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 */,
 				4983EA8C173887EB00482FE5 /* Piano.ff.Gb5.aiff */,
-				498DDB3D1738A1C5007C2231 /* thriftshop.mp3 */,
 				4983EA8F173887EB00482FE5 /* Piano.ff.G5.aiff */,
 			);
 			name = piano;
@@ -265,6 +261,7 @@
 		7179402F170B148800810BA0 = {
 			isa = PBXGroup;
 			children = (
+				498DDB4E17398326007C2231 /* icon.png */,
 				498DDB4417394AE0007C2231 /* AudioToolbox.framework */,
 				4983EAD01738964000482FE5 /* AVFoundation.framework */,
 				71794041170B148800810BA0 /* Four Part Checker */,
@@ -277,7 +274,7 @@
 		71794039170B148800810BA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				71794038170B148800810BA0 /* Four Part Checker.app */,
+				71794038170B148800810BA0 /* Well Toned.app */,
 				71794061170B148900810BA0 /* Four Part CheckerTests.octest */,
 			);
 			name = Products;
@@ -379,7 +376,7 @@
 			);
 			name = "Four Part Checker";
 			productName = "Four Part Checker";
-			productReference = 71794038170B148800810BA0 /* Four Part Checker.app */;
+			productReference = 71794038170B148800810BA0 /* Well Toned.app */;
 			productType = "com.apple.product-type.application";
 		};
 		71794060170B148900810BA0 /* Four Part CheckerTests */ = {
@@ -488,8 +485,7 @@
 				4983EACB17388A1800482FE5 /* Piano.ff.Bb3.aiff in Resources */,
 				4983EACD17388A8A00482FE5 /* Piano.ff.E2.aiff in Resources */,
 				4983EACF17388B8400482FE5 /* Piano.ff.Db3.aiff in Resources */,
-				498DDB3E1738A1C5007C2231 /* thriftshop.mp3 in Resources */,
-				498DDB401738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 in Resources */,
+				498DDB4F17398326007C2231 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,7 +666,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Four Part Checker/Four Part Checker-Prefix.pch";
 				INFOPLIST_FILE = "Four Part Checker/Four Part Checker-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Well Toned";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -685,7 +682,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Four Part Checker/Four Part Checker-Prefix.pch";
 				INFOPLIST_FILE = "Four Part Checker/Four Part Checker-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Well Toned";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
