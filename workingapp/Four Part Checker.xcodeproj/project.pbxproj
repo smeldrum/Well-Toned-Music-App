@@ -55,6 +55,8 @@
 		4983EACF17388B8400482FE5 /* Piano.ff.Db3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EACE17388B8400482FE5 /* Piano.ff.Db3.aiff */; };
 		4983EAD11738964000482FE5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4983EAD01738964000482FE5 /* AVFoundation.framework */; };
 		498DDB38173899C6007C2231 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB37173899C6007C2231 /* jump.wav */; };
+		498DDB3E1738A1C5007C2231 /* thriftshop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB3D1738A1C5007C2231 /* thriftshop.mp3 */; };
+		498DDB401738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB3F1738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 */; };
 		499735D517175FDB001E9178 /* q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 499735D417175FDB001E9178 /* q_note.png */; };
 		7179403C170B148800810BA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403B170B148800810BA0 /* UIKit.framework */; };
 		7179403E170B148800810BA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403D170B148800810BA0 /* Foundation.framework */; };
@@ -142,6 +144,8 @@
 		4983EACE17388B8400482FE5 /* Piano.ff.Db3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Db3.aiff; sourceTree = "<group>"; };
 		4983EAD01738964000482FE5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		498DDB37173899C6007C2231 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = jump.wav; path = "../../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/jump.wav"; sourceTree = "<group>"; };
+		498DDB3D1738A1C5007C2231 /* thriftshop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thriftshop.mp3; sourceTree = "<group>"; };
+		498DDB3F1738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nicki Minaj - Super Bass.mp3"; sourceTree = "<group>"; };
 		499735D417175FDB001E9178 /* q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q_note.png; sourceTree = "<group>"; };
 		71794038170B148800810BA0 /* Four Part Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Four Part Checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7179403B170B148800810BA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -246,7 +250,9 @@
 				4983EA8D173887EB00482FE5 /* Piano.ff.Eb5.aiff */,
 				4983EA8B173887EB00482FE5 /* Piano.ff.E5.aiff */,
 				4983EA8E173887EB00482FE5 /* Piano.ff.F5.aiff */,
+				498DDB3F1738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 */,
 				4983EA8C173887EB00482FE5 /* Piano.ff.Gb5.aiff */,
+				498DDB3D1738A1C5007C2231 /* thriftshop.mp3 */,
 				4983EA8F173887EB00482FE5 /* Piano.ff.G5.aiff */,
 			);
 			name = piano;
@@ -477,6 +483,8 @@
 				4983EACD17388A8A00482FE5 /* Piano.ff.E2.aiff in Resources */,
 				4983EACF17388B8400482FE5 /* Piano.ff.Db3.aiff in Resources */,
 				498DDB38173899C6007C2231 /* jump.wav in Resources */,
+				498DDB3E1738A1C5007C2231 /* thriftshop.mp3 in Resources */,
+				498DDB401738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
