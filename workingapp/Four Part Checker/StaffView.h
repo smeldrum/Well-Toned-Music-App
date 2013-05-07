@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVAudioSession.h>
+#import "HarmonyPlayer.h"
+
 @interface StaffView : UIScrollView
 @property NSMutableArray * soprano;
 @property NSMutableArray * alto;
@@ -15,7 +16,7 @@
 @property NSMutableArray * bass;
 @property int currentvoice;
 @property int tonic;
-
+@property HarmonyPlayer * musicplayer;
 
 -(BOOL)hasParallelFifths:(NSNumber*)note1 withNote2:(NSNumber*)note2 withVoice2:(NSNumber*)note3 withNote4:(NSNumber*)note4;
 -(void)clearStaff;

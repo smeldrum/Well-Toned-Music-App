@@ -57,6 +57,8 @@
 		498DDB38173899C6007C2231 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB37173899C6007C2231 /* jump.wav */; };
 		498DDB3E1738A1C5007C2231 /* thriftshop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB3D1738A1C5007C2231 /* thriftshop.mp3 */; };
 		498DDB401738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB3F1738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 */; };
+		498DDB431739440E007C2231 /* HarmonyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 498DDB421739440E007C2231 /* HarmonyPlayer.m */; };
+		498DDB4517394AE0007C2231 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498DDB4417394AE0007C2231 /* AudioToolbox.framework */; };
 		499735D517175FDB001E9178 /* q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 499735D417175FDB001E9178 /* q_note.png */; };
 		7179403C170B148800810BA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403B170B148800810BA0 /* UIKit.framework */; };
 		7179403E170B148800810BA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403D170B148800810BA0 /* Foundation.framework */; };
@@ -146,6 +148,9 @@
 		498DDB37173899C6007C2231 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = jump.wav; path = "../../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/jump.wav"; sourceTree = "<group>"; };
 		498DDB3D1738A1C5007C2231 /* thriftshop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thriftshop.mp3; sourceTree = "<group>"; };
 		498DDB3F1738A1C6007C2231 /* Nicki Minaj - Super Bass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nicki Minaj - Super Bass.mp3"; sourceTree = "<group>"; };
+		498DDB411739440E007C2231 /* HarmonyPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarmonyPlayer.h; sourceTree = "<group>"; };
+		498DDB421739440E007C2231 /* HarmonyPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HarmonyPlayer.m; sourceTree = "<group>"; };
+		498DDB4417394AE0007C2231 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		499735D417175FDB001E9178 /* q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q_note.png; sourceTree = "<group>"; };
 		71794038170B148800810BA0 /* Four Part Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Four Part Checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7179403B170B148800810BA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -187,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498DDB4517394AE0007C2231 /* AudioToolbox.framework in Frameworks */,
 				4983EAD11738964000482FE5 /* AVFoundation.framework in Frameworks */,
 				7179403C170B148800810BA0 /* UIKit.framework in Frameworks */,
 				7179403E170B148800810BA0 /* Foundation.framework in Frameworks */,
@@ -261,6 +267,7 @@
 		7179402F170B148800810BA0 = {
 			isa = PBXGroup;
 			children = (
+				498DDB4417394AE0007C2231 /* AudioToolbox.framework */,
 				4983EAD01738964000482FE5 /* AVFoundation.framework */,
 				71794041170B148800810BA0 /* Four Part Checker */,
 				71794068170B148900810BA0 /* Four Part CheckerTests */,
@@ -301,6 +308,8 @@
 				71CCB422170DFAD30024D74D /* ChordData.m */,
 				71CCB41E170DFA6C0024D74D /* StaffData.h */,
 				71CCB41F170DFA6C0024D74D /* StaffData.m */,
+				498DDB411739440E007C2231 /* HarmonyPlayer.h */,
+				498DDB421739440E007C2231 /* HarmonyPlayer.m */,
 				71794056170B148800810BA0 /* ViewController_iPhone.xib */,
 				71794059170B148800810BA0 /* ViewController_iPad.xib */,
 				7179407C170B289500810BA0 /* StaffView.h */,
@@ -539,6 +548,7 @@
 				71CCB420170DFA6C0024D74D /* StaffData.m in Sources */,
 				71CCB423170DFAD30024D74D /* ChordData.m in Sources */,
 				4983EA6B1722FCA100482FE5 /* Note.m in Sources */,
+				498DDB431739440E007C2231 /* HarmonyPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
