@@ -19,9 +19,9 @@
     if (self) {
  
         _touchcircle.left = 0;
-        _touchcircle.top = 73;
+
         _touchcircle.right = 0;
-        _touchcircle.bottom = 0;
+
 
     }
     return self;
@@ -29,9 +29,16 @@
 
 
 
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event upstem:(BOOL)upstem;
 {
-
+    if(upstem == true){
+        _touchcircle.top = 73;
+        _touchcircle.bottom = 0;
+    }
+    else{
+        _touchcircle.top = 0;
+        _touchcircle.bottom = 73;
+    }
     CGRect modifiedHitBox = UIEdgeInsetsInsetRect([self bounds], _touchcircle);
     return CGRectContainsPoint(modifiedHitBox, point);
 

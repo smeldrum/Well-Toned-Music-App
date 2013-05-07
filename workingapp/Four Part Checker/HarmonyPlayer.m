@@ -34,7 +34,7 @@
 -(void)play: (NSMutableArray*)soprano a:(NSMutableArray*)alto a:(NSMutableArray*)tenor a:(NSMutableArray*)bass
 {
     i = 0;
-    _soprano =soprano;
+    _soprano = soprano;
     _alto = alto;
     _tenor = tenor;
     _bass = bass;
@@ -51,12 +51,7 @@
         a = [self getNote:_alto[i]];
         t = [self getNote:_tenor[i]];
         b = [self getNote:_bass[i]];
-        NSLog(@"test %i:", i);
-        NSLog(@"%@", s);
-        NSLog(@"%@", a);
-        NSLog(@"%@", t);
-        NSLog(@"%@", b);
-        
+
         if (s!=NULL)sop = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:s ofType:type]] error:NULL];
         if (a!=NULL)alt = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:a ofType:type]] error:NULL];
         if (t!=NULL)ten = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:t ofType:type]] error:NULL];
@@ -66,16 +61,18 @@
         if (a!=NULL)[alt prepareToPlay];
         if (t!=NULL)[ten prepareToPlay];
         if (b!=NULL)[bas prepareToPlay];
-        timer = [NSTimer scheduledTimerWithTimeInterval: 0.25 target:self selector:@selector(playBeat) userInfo:nil repeats: NO];
+        [self playBeat];
     
 }
 -(void)playBeat{
+    NSTimeInterval shortStartDelay = 0.5;            // seconds
+    NSTimeInterval now = sop.deviceCurrentTime;
     
-    if (s!=NULL)[sop play];
-    if (a!=NULL)[alt play];
-    if (t!=NULL)[ten play];
-    if (b!=NULL)[bas play];
-    stoptimer = [NSTimer scheduledTimerWithTimeInterval: 1.75 target:self selector:@selector(stopBeat) userInfo:nil repeats: NO];
+    if (s!=NULL)[sop playAtTime:now+shortStartDelay];
+    if (a!=NULL)[alt playAtTime:now+shortStartDelay];
+    if (t!=NULL)[ten playAtTime:now+shortStartDelay];
+    if (b!=NULL)[bas playAtTime:now+shortStartDelay];
+    stoptimer = [NSTimer scheduledTimerWithTimeInterval: 2.0 target:self selector:@selector(stopBeat) userInfo:nil repeats: NO];
     
 }
 -(void)stopBeat{

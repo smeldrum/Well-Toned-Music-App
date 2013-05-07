@@ -57,6 +57,8 @@
 		498DDB431739440E007C2231 /* HarmonyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 498DDB421739440E007C2231 /* HarmonyPlayer.m */; };
 		498DDB4517394AE0007C2231 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498DDB4417394AE0007C2231 /* AudioToolbox.framework */; };
 		498DDB4F17398326007C2231 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB4E17398326007C2231 /* icon.png */; };
+		498DDB5117399E8E007C2231 /* down_q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB5017399E8E007C2231 /* down_q_note.png */; };
+		498DDB551739A464007C2231 /* red_down_q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB541739A464007C2231 /* red_down_q_note.png */; };
 		499735D517175FDB001E9178 /* q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 499735D417175FDB001E9178 /* q_note.png */; };
 		7179403C170B148800810BA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403B170B148800810BA0 /* UIKit.framework */; };
 		7179403E170B148800810BA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403D170B148800810BA0 /* Foundation.framework */; };
@@ -147,6 +149,8 @@
 		498DDB421739440E007C2231 /* HarmonyPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HarmonyPlayer.m; sourceTree = "<group>"; };
 		498DDB4417394AE0007C2231 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		498DDB4E17398326007C2231 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		498DDB5017399E8E007C2231 /* down_q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_q_note.png; sourceTree = "<group>"; };
+		498DDB541739A464007C2231 /* red_down_q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_down_q_note.png; sourceTree = "<group>"; };
 		499735D417175FDB001E9178 /* q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q_note.png; sourceTree = "<group>"; };
 		71794038170B148800810BA0 /* Well Toned.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Well Toned.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7179403B170B148800810BA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -324,6 +328,8 @@
 				4983EA7917297D9C00482FE5 /* logo1.png */,
 				4983EA751728BE5200482FE5 /* red_q_note.png */,
 				499735D417175FDB001E9178 /* q_note.png */,
+				498DDB5017399E8E007C2231 /* down_q_note.png */,
+				498DDB541739A464007C2231 /* red_down_q_note.png */,
 				71C55F60170E25C100D090BB /* staff2.png */,
 				71794043170B148800810BA0 /* Four Part Checker-Info.plist */,
 				71794044170B148800810BA0 /* InfoPlist.strings */,
@@ -486,6 +492,8 @@
 				4983EACD17388A8A00482FE5 /* Piano.ff.E2.aiff in Resources */,
 				4983EACF17388B8400482FE5 /* Piano.ff.Db3.aiff in Resources */,
 				498DDB4F17398326007C2231 /* icon.png in Resources */,
+				498DDB5117399E8E007C2231 /* down_q_note.png in Resources */,
+				498DDB551739A464007C2231 /* red_down_q_note.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

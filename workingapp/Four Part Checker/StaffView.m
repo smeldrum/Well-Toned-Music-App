@@ -103,14 +103,25 @@ const NSUInteger kNumImages     = 200;
     y = y-85;
     y =detectValue(y);
     if (y == 0)return;
-    Note *note = [[Note alloc] initWithFrame:CGRectMake(x, y+3, 30, 100)];
-        UIImage *img = [UIImage imageNamed:@"q_note.png"];
-    
-    //check to see if sharp or flat is selected then set proper image
+    Note *note;
+    if (currentvoice==3 ||currentvoice==1){ //stem up!
+         note = [[Note alloc] initWithFrame:CGRectMake(x, y+3, 30, 100)];
+            UIImage *img = [UIImage imageNamed:@"q_note.png"];    
+            //check to see if sharp or flat is selected then set proper image
 
-    [note setImage:img forState:UIControlStateNormal];
-    
-    [note addTarget:self action: @selector(notePressed:withevent:) forControlEvents:UIControlEventTouchUpInside];
+        [note setImage:img forState:UIControlStateNormal];
+        [note addTarget:self action: @selector(notePressed:withevent:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    else{ //stem dowwwwn
+        note = [[Note alloc] initWithFrame:CGRectMake(x, y+76, 30, 100)];
+        UIImage *img = [UIImage imageNamed:@"down_q_note.png"];
+        
+        //check to see if sharp or flat is selected then set proper image
+        
+        [note setImage:img forState:UIControlStateNormal];
+        [note addTarget:self action: @selector(downnotePressed:withevent:) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
     note.index = sender.tag;
     note.voice = currentvoice;
     [sender addSubview:note];
@@ -167,13 +178,30 @@ int detectValue(int y)
     
 }
 
+
+-(void)downnotePressed: (Note*)sender withevent: event
+{
+    NSSet *touches = [event touchesForView:sender];
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPoint = [touch locationInView:sender];
+    
+    if( [sender pointInside:touchPoint withEvent:event upstem:false] == true){
+        if (sender.voice==0) _bass[sender.index]=[NSNumber numberWithInt:0];
+        else if (sender.voice==1) _tenor[sender.index]=[NSNumber numberWithInt:0];
+        else if (sender.voice==2) _alto[sender.index]=[NSNumber numberWithInt:0];
+        else if (sender.voice==3) _soprano[sender.index]=[NSNumber numberWithInt:0];
+        [sender removeFromSuperview];
+    }
+    
+    
+}
 -(void)notePressed: (Note*)sender withevent: event
 {
     NSSet *touches = [event touchesForView:sender];
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInView:sender];
        
-    if( [sender pointInside:touchPoint withEvent:event] == true){
+    if( [sender pointInside:touchPoint withEvent:event upstem:true] == true){
         if (sender.voice==0) _bass[sender.index]=[NSNumber numberWithInt:0];
         else if (sender.voice==1) _tenor[sender.index]=[NSNumber numberWithInt:0];
         else if (sender.voice==2) _alto[sender.index]=[NSNumber numberWithInt:0];
@@ -265,13 +293,22 @@ int detectValue(int y)
         }
     }
 }
--(void)allBlack 
+
+
+
+-(void)allBlack
 {
     for(UIButton *subview in [self subviews]) {
         for(Note *notes in [subview subviews]) {
-            UIImage *img = [UIImage imageNamed:@"q_note.png"];
+            UIImage *img;
+            if (notes.voice ==3 ||notes.voice==1){
+                img = [UIImage imageNamed:@"q_note.png"];
+            }
+            else{
+                img = [UIImage imageNamed:@"down_q_note.png"];
+            }
             [notes setImage:img forState:normal];
-
+            
         }
     }
 }
@@ -280,19 +317,27 @@ int detectValue(int y)
     for(UIButton *subview in [self subviews]) {
         for(Note *notes in [subview subviews]) {
             if (notes.index == index && notes.voice == voice){
-                UIImage *img = [UIImage imageNamed:@"red_q_note.png"];
+                UIImage *img;
+                if (notes.voice ==3 ||notes.voice==1){
+                    img = [UIImage imageNamed:@"red_q_note.png"];
+                }
+                else{
+                    img = [UIImage imageNamed:@"red_down_q_note.png"];
+                }
                 [notes setImage:img forState:normal];
             }
         }
     }
 }
+
+
 -(BOOL)hasParallels:(NSNumber*)note1 withNote2:(NSNumber*)note2 withVoice2:(NSNumber*)note3 withNote4:(NSNumber*)note4{
     int higher1 = [note2 intValue];
     int higher2 = [note1 intValue];
     int lower1 = [note4 intValue];
     int lower2 = [note3 intValue];
     
-       NSLog(@"%d, %d, %d, %d", higher1, higher2, lower1, lower2);
+
     if((higher1-lower1)%21==0){
         if((higher2-lower2)%21==0 && higher2!=higher1){
             return true;

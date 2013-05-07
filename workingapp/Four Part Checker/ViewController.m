@@ -96,7 +96,6 @@
     [logo1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"logo.png"]]];
     [self.view addSubview:logo1];
     [self addPickerView];
-    [self allocateData];
 }
 
 -(void) playStaff: (id)sender
@@ -129,9 +128,6 @@
     }
     _currentvoice = sender.tag;
     _staff.currentvoice=_currentvoice;
-}
-- (void)allocateData{
-    StaffData * data = [[StaffData alloc] init];
 }
 
 -(void)addPickerView{
