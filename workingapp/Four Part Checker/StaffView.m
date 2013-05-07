@@ -305,38 +305,34 @@ int detectValue(int y)
 
 -(void)playStaff
 {
-
+    NSError *audioError;
     //for (int i=0; i<kNumImages;i++)
     //{
        // if (_soprano[i]==[NSNumber numberWithInt:0]&&_alto[i]==[NSNumber numberWithInt:0]&&_tenor[i]==[NSNumber numberWithInt:0]&&_bass[i]==[NSNumber numberWithInt:0])break;
     NSLog(@"SUUUUP");
+  
+
     
-    // Get path of sound file in bundle.
-    NSString *path = [[NSBundle mainBundle] pathForResource: @"jump" ofType: @"wav"];
-    
-    // Create url from path.
-    NSURL *url = [NSURL URLWithString: path];
-    
-        NSURL *urlS = [NSURL URLWithString:@"Piano.ff.C4.aiff"];
-        AVPlayer *sopranoPlayer = [[AVPlayer alloc] initWithURL:urlS];
+        NSURL *urlS = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Four Part Checker/Piano.ff.C4.aiff",[[NSBundle mainBundle] resourcePath]]];
+        AVAudioPlayer *sopranoPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlS error:&audioError];
 
         
-        NSURL *urlA = [NSURL URLWithString:@"Piano.ff.E4.aiff"];
-        AVPlayer *altoPlayer = [[AVPlayer alloc] initWithURL:urlA];
+      /*  NSURL *urlA = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Four Part Checker/corn.mp3",[[NSBundle mainBundle] resourcePath]]];
+        AVAudioPlayer *altoPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlS error:&audioError];
 
         
-        NSURL *urlT = [NSURL URLWithString:@"Piano.ff.G4.aiff"];
-        AVPlayer *tenorPlayer = [[AVPlayer alloc] initWithURL:urlT];
+        NSURL *urlT = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Four Part Checker/corn.mp3",[[NSBundle mainBundle] resourcePath]]];
+        AVAudioPlayer *tenorPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlS error:&audioError];
     
         
-       // NSURL *urlB = [NSURL URLWithString:@"jump.wav"];
-        AVPlayer *bassPlayer = [[AVPlayer alloc] initWithURL:url];
-        
+        NSURL *urlB = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Four Part Checker/corn.mp3",[[NSBundle mainBundle] resourcePath]]];
+        AVAudioPlayer *bassPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlS error:&audioError];
+        */
         
         [sopranoPlayer play];
-        [altoPlayer play];
-        [tenorPlayer play];
-        [bassPlayer play];
+       // [altoPlayer play];
+        //[tenorPlayer play];
+        //[bassPlayer play];
         
 
         
