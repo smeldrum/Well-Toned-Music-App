@@ -95,7 +95,7 @@
     UIImageView * logo1 = [[UIImageView alloc] initWithFrame: CGRectMake(830, 645, 163, 119)];
     [logo1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"logo.png"]]];
     [self.view addSubview:logo1];
-    
+    [self addPickerView];
     [self allocateData];
 }
 
@@ -132,7 +132,67 @@
 }
 - (void)allocateData{
     StaffData * data = [[StaffData alloc] init];
-    [data changeChordNote:3 withLine:1 withIndex:0];
 }
+
+-(void)addPickerView{
+    pickerArray = [[NSArray alloc]initWithObjects:@"A Major",
+                   @"B Major",@"C Major",@"D Major",@"E major", @"F major",
+                   @"G major", nil];
+    myTextField = [[UITextField alloc]initWithFrame:
+                   CGRectMake(510, 700, 300, 30)];
+    myTextField.borderStyle = UITextBorderStyleRoundedRect;
+    myTextField.delegate = self;
+    [self.view addSubview:myTextField];
+    [myTextField setPlaceholder:@"Pick a Key"];
+    myPickerView = [[UIPickerView alloc]init];
+    myPickerView.dataSource = self;
+    myPickerView.delegate = self;
+    myPickerView.showsSelectionIndicator = YES;
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Done" style:UIBarButtonItemStyleDone
+                                   target:self action:@selector(done:)];
+    UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:
+                          CGRectMake(500, 600, 300, 200)];
+    [toolBar setBarStyle:UIBarStyleBlackOpaque];
+    NSArray *toolbarItems = [NSArray arrayWithObjects:
+                             doneButton, nil];
+    [toolBar setItems:toolbarItems];
+    myTextField.inputView = myPickerView;
+    myTextField.inputAccessoryView = toolBar;
+    
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component {
+    _staff.tonic = (3 * row + 11) % 21;
+}
+
+// tell the picker how many rows are available for a given component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    NSUInteger numRows = 5;
+    
+    return numRows;
+}
+
+// tell the picker how many components it will have
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+// tell the picker the title for a given component
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *title;
+    title = [@"" stringByAppendingFormat:@"%d",row];
+    
+    return title;
+}
+
+// tell the picker the width of each row for a given component
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    int sectionWidth = 300;
+    
+    return sectionWidth;
+}
+
+
 
 @end
