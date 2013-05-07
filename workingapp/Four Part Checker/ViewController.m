@@ -152,7 +152,8 @@
                                    initWithTitle:@"Done" style:UIBarButtonItemStyleDone
                                    target:self action:@selector(done:)];
     UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:
-                          CGRectMake(500, 600, 300, 200)];
+                          CGRectMake(self.view.frame.origin.x,
+                                     self.view.frame.origin.y-50,self.view.frame.size.width , 50)];
     [toolBar setBarStyle:UIBarStyleBlackOpaque];
     NSArray *toolbarItems = [NSArray arrayWithObjects:
                              doneButton, nil];
@@ -162,14 +163,15 @@
     
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component {
-    _staff.tonic = (3 * row + 11) % 21;
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:
+(NSInteger)row inComponent:(NSInteger)component{
+    _staff.tonic = (11 + row * 3) % 21;
+    myTextField.text = [pickerArray objectAtIndex:row];
 }
 
 // tell the picker how many rows are available for a given component
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSUInteger numRows = 5;
-    
+    NSUInteger numRows = [pickerArray count];
     return numRows;
 }
 
@@ -181,7 +183,7 @@
 // tell the picker the title for a given component
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSString *title;
-    title = [@"" stringByAppendingFormat:@"%d",row];
+    title = [pickerArray objectAtIndex:row];
     
     return title;
 }
@@ -193,6 +195,8 @@
     return sectionWidth;
 }
 
-
+-(void) done: (UIButton*)sender{
+    [myTextField resignFirstResponder];
+}
 
 @end
