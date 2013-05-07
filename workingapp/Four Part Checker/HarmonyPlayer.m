@@ -7,7 +7,7 @@
 //
 
 #import "HarmonyPlayer.h"
-
+#import <QuartzCore/CAAnimation.h> 
 
 
 @implementation HarmonyPlayer
@@ -67,7 +67,7 @@
 }
 -(void)playBeat{
     NSTimeInterval shortStartDelay = 0.5;          
-    NSTimeInterval now = sop.deviceCurrentTime;
+    NSTimeInterval now = CACurrentMediaTime();
     
     if (s!=NULL)[sop playAtTime:now+shortStartDelay];
     if (a!=NULL)[alt playAtTime:now+shortStartDelay];

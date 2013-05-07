@@ -63,6 +63,7 @@
 		498DDB591739AE0C007C2231 /* down_q_note_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB581739AE0C007C2231 /* down_q_note_sharp.png */; };
 		498DDB5B1739B17A007C2231 /* red_q_note_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB5A1739B17A007C2231 /* red_q_note_sharp.png */; };
 		498DDB5D1739B1B0007C2231 /* q_note_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB5C1739B1B0007C2231 /* q_note_sharp.png */; };
+		498DDB5F1739B501007C2231 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498DDB5E1739B500007C2231 /* QuartzCore.framework */; };
 		499735D517175FDB001E9178 /* q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 499735D417175FDB001E9178 /* q_note.png */; };
 		7179403C170B148800810BA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403B170B148800810BA0 /* UIKit.framework */; };
 		7179403E170B148800810BA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403D170B148800810BA0 /* Foundation.framework */; };
@@ -159,6 +160,7 @@
 		498DDB581739AE0C007C2231 /* down_q_note_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_q_note_sharp.png; sourceTree = "<group>"; };
 		498DDB5A1739B17A007C2231 /* red_q_note_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_q_note_sharp.png; sourceTree = "<group>"; };
 		498DDB5C1739B1B0007C2231 /* q_note_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q_note_sharp.png; sourceTree = "<group>"; };
+		498DDB5E1739B500007C2231 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		499735D417175FDB001E9178 /* q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q_note.png; sourceTree = "<group>"; };
 		71794038170B148800810BA0 /* Well Toned.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Well Toned.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7179403B170B148800810BA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -200,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498DDB5F1739B501007C2231 /* QuartzCore.framework in Frameworks */,
 				498DDB4517394AE0007C2231 /* AudioToolbox.framework in Frameworks */,
 				4983EAD11738964000482FE5 /* AVFoundation.framework in Frameworks */,
 				7179403C170B148800810BA0 /* UIKit.framework in Frameworks */,
@@ -273,6 +276,7 @@
 		7179402F170B148800810BA0 = {
 			isa = PBXGroup;
 			children = (
+				498DDB5E1739B500007C2231 /* QuartzCore.framework */,
 				498DDB4E17398326007C2231 /* icon.png */,
 				498DDB4417394AE0007C2231 /* AudioToolbox.framework */,
 				4983EAD01738964000482FE5 /* AVFoundation.framework */,
