@@ -13,6 +13,7 @@
 
 @implementation StaffView
 @synthesize currentvoice;
+@synthesize tonic;
 
 const CGFloat kScrollObjHeight  = 650;
 const CGFloat kScrollObjWidth   = 50;

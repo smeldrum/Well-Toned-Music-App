@@ -14,6 +14,7 @@
 @property NSMutableArray * tenor;
 @property NSMutableArray * bass;
 @property int currentvoice;
+@property int tonic;
 
 
 -(BOOL)hasParallelFifths:(NSNumber*)note1 withNote2:(NSNumber*)note2 withVoice2:(NSNumber*)note3 withNote4:(NSNumber*)note4;

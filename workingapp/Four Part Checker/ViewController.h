@@ -10,7 +10,14 @@
 @class NoteScrollView;
 @class StaffView;
 
-@interface ViewController : UIViewController 
+@interface ViewController : UIViewController
+<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
+{
+    
+    UITextField *myTextField;
+    UIPickerView *myPickerView;
+    NSArray *pickerArray;
+}
 @property StaffView* staff;
 @property int currentvoice;
 
