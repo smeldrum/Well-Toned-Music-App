@@ -153,11 +153,13 @@ const NSUInteger kNumImages     = 200;
         val += 54;
         val =  ((3*val)/2)+ 2;
     }
-    _sharp = false;
+
     if (currentvoice==0) _bass[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==1) _tenor[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==2) _alto[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==3) _soprano[sender.tag]=[NSNumber numberWithInt:val];
+    
+    _sharp = false;
     
 }
 int detectValue(int y)

@@ -22,6 +22,7 @@
 @synthesize timer;
 @synthesize stoptimer;
 @synthesize i;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
