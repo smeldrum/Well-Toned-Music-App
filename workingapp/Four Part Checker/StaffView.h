@@ -15,6 +15,7 @@
 @property NSMutableArray * tenor;
 @property NSMutableArray * bass;
 @property int currentvoice;
+@property int leadingTone;
 @property int tonic;
 @property HarmonyPlayer * musicplayer;
 

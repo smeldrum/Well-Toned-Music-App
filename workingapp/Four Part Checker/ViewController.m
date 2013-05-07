@@ -161,7 +161,36 @@
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:
 (NSInteger)row inComponent:(NSInteger)component{
-    _staff.tonic = (11 + row * 3) % 21;
+    switch(row){
+        case 0:
+            _staff.leadingTone = 9;
+            _staff.tonic = 11;
+            break;
+        case 1:
+            _staff.leadingTone = 12;
+            _staff.tonic = 14;
+            break;
+        case 2:
+            _staff.leadingTone = 14;
+            _staff.tonic = 17;
+            break;
+        case 3:
+            _staff.leadingTone = 18;
+            _staff.tonic = 20;
+            break;
+        case 4:
+            _staff.leadingTone = 21;
+            _staff.tonic = 2;
+            break;
+        case 5:
+            _staff.leadingTone = 2;
+            _staff.tonic = 5;
+            break;
+        case 6:
+            _staff.leadingTone = 6;
+            _staff.tonic = 8;
+            break;
+    }
     myTextField.text = [pickerArray objectAtIndex:row];
 }
 

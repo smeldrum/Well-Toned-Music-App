@@ -14,6 +14,7 @@
 
 @implementation StaffView
 @synthesize currentvoice;
+@synthesize leadingTone;
 @synthesize tonic;
 
 const CGFloat kScrollObjHeight  = 650;
@@ -249,52 +250,78 @@ int detectValue(int y)
         }
         
     }
-    [self checkParallelFifthsOctaves];
+    [self errorChecking];
 }
--(void)checkParallelFifthsOctaves{
+-(void)checkLeadingTones{
     for(int i=1; i<kNumImages; i++){
         if (_soprano[i]!=[NSNumber numberWithInt:0] && _alto[i]!=[NSNumber numberWithInt:0] && _tenor[i]!=[NSNumber numberWithInt:0]&&_bass[i]!=[NSNumber numberWithInt:0] && _soprano[i-1]!=[NSNumber numberWithInt:0] && _alto[i-1]!=[NSNumber numberWithInt:0] && _tenor[i-1]!=[NSNumber numberWithInt:0]&&_bass[i-1]!=[NSNumber numberWithInt:0]){
-            if([self hasParallels:_soprano[i] withNote2:_soprano[i-1] withVoice2: _alto[i] withNote4: _alto[i-1]]==true){
-                [self turnRed:3 atIndex:i];
-                [self turnRed:2 atIndex:i];
-                [self turnRed:3 atIndex:i-1];
-                [self turnRed:2 atIndex:i-1];
-            }
-            if([self hasParallels:_soprano[i] withNote2:_soprano[i-1] withVoice2: _tenor[i] withNote4: _tenor[i-1]]==true){
-                [self turnRed:3 atIndex:i];
-                [self turnRed:1 atIndex:i];
-                [self turnRed:3 atIndex:i-1];
-                [self turnRed:1 atIndex:i-1];
-            }
-            if([self hasParallels:_soprano[i] withNote2:_soprano[i-1] withVoice2: _bass[i] withNote4: _bass[i-1]]==true){
-                [self turnRed:3 atIndex:i];
-                [self turnRed:0 atIndex:i];
-                [self turnRed:3 atIndex:i-1];
-                [self turnRed:0 atIndex:i-1];
-            }
-            if([self hasParallels:_alto[i] withNote2:_alto[i-1] withVoice2: _tenor[i] withNote4: _tenor[i-1]]==true){
-                [self turnRed:2 atIndex:i];
-                [self turnRed:1 atIndex:i];
-                [self turnRed:2 atIndex:i-1];
-                [self turnRed:1 atIndex:i-1];
-            }
-            if([self hasParallels:_alto[i] withNote2:_alto[i-1] withVoice2: _bass[i] withNote4: _bass[i-1]]==true){
-                [self turnRed:2 atIndex:i];
-                [self turnRed:0 atIndex:i];
-                [self turnRed:2 atIndex:i-1];
-                [self turnRed:0 atIndex:i-1];
-            }
-            if([self hasParallels:_tenor[i] withNote2:_tenor[i-1] withVoice2: _bass[i] withNote4: _bass[i-1]]==true){
-                [self turnRed:1 atIndex:i];
-                [self turnRed:0 atIndex:i];
-                [self turnRed:1 atIndex:i-1];
-                [self turnRed:0 atIndex:i-1];
-            }
+            
         }
     }
 }
 
+-(void)errorChecking{
+    for(int i=1; i<kNumImages; i++){
+        if (_soprano[i]!=[NSNumber numberWithInt:0] && _alto[i]!=[NSNumber numberWithInt:0] && _tenor[i]!=[NSNumber numberWithInt:0]&&_bass[i]!=[NSNumber numberWithInt:0] && _soprano[i-1]!=[NSNumber numberWithInt:0] && _alto[i-1]!=[NSNumber numberWithInt:0] && _tenor[i-1]!=[NSNumber numberWithInt:0]&&_bass[i-1]!=[NSNumber numberWithInt:0]){
+            [self checkFifthsOctaves:i];
+            
+        }
+    }
+}
 
+-(void)checkFifthsOctaves: (int)i{
+    if([self hasParallels:_soprano[i] withNote2:_soprano[i-1] withVoice2: _alto[i] withNote4: _alto[i-1]]==true){
+        [self turnRed:3 atIndex:i];
+        [self turnRed:2 atIndex:i];
+        [self turnRed:3 atIndex:i-1];
+        [self turnRed:2 atIndex:i-1];
+    }
+    if([self hasParallels:_soprano[i] withNote2:_soprano[i-1] withVoice2: _tenor[i] withNote4: _tenor[i-1]]==true){
+        [self turnRed:3 atIndex:i];
+        [self turnRed:1 atIndex:i];
+        [self turnRed:3 atIndex:i-1];
+        [self turnRed:1 atIndex:i-1];
+    }
+    if([self hasParallels:_soprano[i] withNote2:_soprano[i-1] withVoice2: _bass[i] withNote4: _bass[i-1]]==true){
+        [self turnRed:3 atIndex:i];
+        [self turnRed:0 atIndex:i];
+        [self turnRed:3 atIndex:i-1];
+        [self turnRed:0 atIndex:i-1];
+    }
+    if([self hasParallels:_alto[i] withNote2:_alto[i-1] withVoice2: _tenor[i] withNote4: _tenor[i-1]]==true){
+        [self turnRed:2 atIndex:i];
+        [self turnRed:1 atIndex:i];
+        [self turnRed:2 atIndex:i-1];
+        [self turnRed:1 atIndex:i-1];
+    }
+    if([self hasParallels:_alto[i] withNote2:_alto[i-1] withVoice2: _bass[i] withNote4: _bass[i-1]]==true){
+        [self turnRed:2 atIndex:i];
+        [self turnRed:0 atIndex:i];
+        [self turnRed:2 atIndex:i-1];
+        [self turnRed:0 atIndex:i-1];
+    }
+    if([self hasParallels:_tenor[i] withNote2:_tenor[i-1] withVoice2: _bass[i] withNote4: _bass[i-1]]==true){
+        [self turnRed:1 atIndex:i];
+        [self turnRed:0 atIndex:i];
+        [self turnRed:1 atIndex:i-1];
+        [self turnRed:0 atIndex:i-1];
+    }
+}
+
+-(void)checkLTs: (int)i {
+    if([self hasBadLT:_soprano[i] withNote2:_soprano[i-1]]){
+        [self turnGreen:3 atIndex:i];
+        [self turnGreen:3 atIndex:i-1];
+    }
+        if([self hasBadLT:_alto[i] withNote2:_alto[i-1]]){
+        [self turnGreen:2 atIndex:i];
+        [self turnGreen:2 atIndex:i-1];
+    }
+        if([self hasBadLT:_tenor[i] withNote2:_tenor[i-1]]){
+        [self turnGreen:1 atIndex:i];
+        [self turnGreen:1 atIndex:i-1];
+    }
+}
 
 -(void)allBlack
 {
@@ -330,6 +357,17 @@ int detectValue(int y)
     }
 }
 
+-(void)turnGreen: (int) voice atIndex: (int)index
+{
+    for(UIButton *subview in [self subviews]) {
+        for(Note *notes in [subview subviews]) {
+            if (notes.index == index && notes.voice == voice){
+                UIImage *img = [UIImage imageNamed:@"green_q_note.png"];
+                [notes setImage:img forState:normal];
+            }
+        }
+    }
+}
 
 -(BOOL)hasParallels:(NSNumber*)note1 withNote2:(NSNumber*)note2 withVoice2:(NSNumber*)note3 withNote4:(NSNumber*)note4{
     int higher1 = [note2 intValue];
@@ -344,6 +382,17 @@ int detectValue(int y)
         }
     } else if((higher1-lower1)%12==0){
         if((higher2-lower2)%12==0 &&higher2!=higher1){
+            return true;
+        }
+    }
+    return false;
+}
+-(BOOL)hasBadLT:(NSNumber*)note1 withNote2:(NSNumber*)note2{
+    int second = [note2 intValue];
+    int first = [note1 intValue];
+    
+    if((first %21 == self.leadingTone) || (first==21 && first == self.leadingTone)){
+        if(second !=self.tonic){
             return true;
         }
     }
