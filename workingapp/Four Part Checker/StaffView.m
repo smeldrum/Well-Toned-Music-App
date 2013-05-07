@@ -8,6 +8,7 @@
 
 #import "StaffView.h"
 #import "Note.h"
+#import "HarmonyPlayer.h"
 #import <QuartzCore/QuartzCore.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -24,7 +25,8 @@ const NSUInteger kNumImages     = 200;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        _musicplayer = [HarmonyPlayer alloc];
+ 
         _soprano = [[NSMutableArray alloc] initWithCapacity:kNumImages];
         _alto = [[NSMutableArray alloc] initWithCapacity:kNumImages];
         _tenor = [[NSMutableArray alloc] initWithCapacity:kNumImages];
@@ -355,39 +357,7 @@ int detectValue(int y)
 
 -(void)playStaff
 {
-    NSError *audioError;
-    //for (int i=0; i<kNumImages;i++)
-    //{
-       // if (_soprano[i]==[NSNumber numberWithInt:0]&&_alto[i]==[NSNumber numberWithInt:0]&&_tenor[i]==[NSNumber numberWithInt:0]&&_bass[i]==[NSNumber numberWithInt:0])break;
-    NSLog(@"SUUUUP");
-  
-
-    
-        NSURL *urlS = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@play.mp3",[[NSBundle mainBundle] resourcePath]]];
-        AVAudioPlayer *sopranoPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlS error:&audioError];
-
-        
-      /*  NSURL *urlA = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Four Part Checker/corn.mp3",[[NSBundle mainBundle] resourcePath]]];
-        AVAudioPlayer *altoPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlS error:&audioError];
-
-        
-        NSURL *urlT = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Four Part Checker/corn.mp3",[[NSBundle mainBundle] resourcePath]]];
-        AVAudioPlayer *tenorPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlS error:&audioError];
-    
-        
-        NSURL *urlB = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Four Part Checker/corn.mp3",[[NSBundle mainBundle] resourcePath]]];
-        AVAudioPlayer *bassPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlS error:&audioError];
-        */
-        
-        [sopranoPlayer play];
-       // [altoPlayer play];
-        //[tenorPlayer play];
-        //[bassPlayer play];
-        
-
-        
-   // }
-    
+    [_musicplayer play: _soprano a:_alto a:_tenor a:_bass];
 }
 
 @end
