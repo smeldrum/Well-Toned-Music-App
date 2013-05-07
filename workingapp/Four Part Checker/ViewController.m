@@ -93,7 +93,12 @@
     [sharp setTitle:@"#" forState: UIControlStateNormal];
     [sharp addTarget:self action:@selector(selectSharp:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:sharp];
-    
+ 
+    UIButton * flat = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    flat.frame = CGRectMake(140, 620, 50, 30);
+    [flat setTitle:@"♭" forState: UIControlStateNormal];
+    //[flat addTarget:self action:@selector(selectFlat:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:flat];
     
     UIImageView * logo1 = [[UIImageView alloc] initWithFrame: CGRectMake(830, 645, 163, 119)];
     [logo1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"logo.png"]]];

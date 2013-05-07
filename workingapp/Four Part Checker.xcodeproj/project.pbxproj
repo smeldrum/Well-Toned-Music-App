@@ -276,10 +276,7 @@
 		7179402F170B148800810BA0 = {
 			isa = PBXGroup;
 			children = (
-				498DDB5E1739B500007C2231 /* QuartzCore.framework */,
 				498DDB4E17398326007C2231 /* icon.png */,
-				498DDB4417394AE0007C2231 /* AudioToolbox.framework */,
-				4983EAD01738964000482FE5 /* AVFoundation.framework */,
 				71794041170B148800810BA0 /* Four Part Checker */,
 				71794068170B148900810BA0 /* Four Part CheckerTests */,
 				7179403A170B148800810BA0 /* Frameworks */,
@@ -299,6 +296,9 @@
 		7179403A170B148800810BA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				498DDB5E1739B500007C2231 /* QuartzCore.framework */,
+				498DDB4417394AE0007C2231 /* AudioToolbox.framework */,
+				4983EAD01738964000482FE5 /* AVFoundation.framework */,
 				4983EA731727658000482FE5 /* Crashlytics.framework */,
 				7179403B170B148800810BA0 /* UIKit.framework */,
 				7179403D170B148800810BA0 /* Foundation.framework */,
