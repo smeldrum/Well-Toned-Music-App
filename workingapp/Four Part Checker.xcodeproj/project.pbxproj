@@ -12,6 +12,49 @@
 		4983EA761728BE5200482FE5 /* red_q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA751728BE5200482FE5 /* red_q_note.png */; };
 		4983EA7817297C5700482FE5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA7717297C5700482FE5 /* logo.png */; };
 		4983EA7A17297D9C00482FE5 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA7917297D9C00482FE5 /* logo1.png */; };
+		4983EA91173887EB00482FE5 /* Piano.ff.D4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA7C173887EB00482FE5 /* Piano.ff.D4.aiff */; };
+		4983EA92173887EB00482FE5 /* Piano.ff.Eb4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA7D173887EB00482FE5 /* Piano.ff.Eb4.aiff */; };
+		4983EA94173887EB00482FE5 /* Piano.ff.A4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA7F173887EB00482FE5 /* Piano.ff.A4.aiff */; };
+		4983EA95173887EB00482FE5 /* Piano.ff.Db4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA80173887EB00482FE5 /* Piano.ff.Db4.aiff */; };
+		4983EA96173887EB00482FE5 /* Piano.ff.Gb4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA81173887EB00482FE5 /* Piano.ff.Gb4.aiff */; };
+		4983EA97173887EB00482FE5 /* Piano.ff.E4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA82173887EB00482FE5 /* Piano.ff.E4.aiff */; };
+		4983EA98173887EB00482FE5 /* Piano.ff.G4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA83173887EB00482FE5 /* Piano.ff.G4.aiff */; };
+		4983EA99173887EB00482FE5 /* Piano.ff.Ab4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA84173887EB00482FE5 /* Piano.ff.Ab4.aiff */; };
+		4983EA9A173887EB00482FE5 /* Piano.ff.F4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA85173887EB00482FE5 /* Piano.ff.F4.aiff */; };
+		4983EA9B173887EB00482FE5 /* Piano.ff.B4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA86173887EB00482FE5 /* Piano.ff.B4.aiff */; };
+		4983EA9C173887EB00482FE5 /* Piano.ff.Bb4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA87173887EB00482FE5 /* Piano.ff.Bb4.aiff */; };
+		4983EA9D173887EB00482FE5 /* Piano.ff.C5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA88173887EB00482FE5 /* Piano.ff.C5.aiff */; };
+		4983EA9E173887EB00482FE5 /* Piano.ff.D5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA89173887EB00482FE5 /* Piano.ff.D5.aiff */; };
+		4983EA9F173887EB00482FE5 /* Piano.ff.Db5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA8A173887EB00482FE5 /* Piano.ff.Db5.aiff */; };
+		4983EAA0173887EB00482FE5 /* Piano.ff.E5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA8B173887EB00482FE5 /* Piano.ff.E5.aiff */; };
+		4983EAA1173887EB00482FE5 /* Piano.ff.Gb5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA8C173887EB00482FE5 /* Piano.ff.Gb5.aiff */; };
+		4983EAA2173887EB00482FE5 /* Piano.ff.Eb5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA8D173887EB00482FE5 /* Piano.ff.Eb5.aiff */; };
+		4983EAA3173887EB00482FE5 /* Piano.ff.F5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA8E173887EB00482FE5 /* Piano.ff.F5.aiff */; };
+		4983EAA4173887EB00482FE5 /* Piano.ff.G5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA8F173887EB00482FE5 /* Piano.ff.G5.aiff */; };
+		4983EAA5173887EB00482FE5 /* Piano.ff.C4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EA90173887EB00482FE5 /* Piano.ff.C4.aiff */; };
+		4983EAB917388A1800482FE5 /* Piano.ff.A2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAA617388A1800482FE5 /* Piano.ff.A2.aiff */; };
+		4983EABA17388A1800482FE5 /* Piano.ff.Eb2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAA717388A1800482FE5 /* Piano.ff.Eb2.aiff */; };
+		4983EABB17388A1800482FE5 /* Piano.ff.F2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAA817388A1800482FE5 /* Piano.ff.F2.aiff */; };
+		4983EABC17388A1800482FE5 /* Piano.ff.Ab2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAA917388A1800482FE5 /* Piano.ff.Ab2.aiff */; };
+		4983EABD17388A1800482FE5 /* Piano.ff.G2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAAA17388A1800482FE5 /* Piano.ff.G2.aiff */; };
+		4983EABE17388A1800482FE5 /* Piano.ff.Gb2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAAB17388A1800482FE5 /* Piano.ff.Gb2.aiff */; };
+		4983EABF17388A1800482FE5 /* Piano.ff.B2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAAC17388A1800482FE5 /* Piano.ff.B2.aiff */; };
+		4983EAC017388A1800482FE5 /* Piano.ff.Bb2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAAD17388A1800482FE5 /* Piano.ff.Bb2.aiff */; };
+		4983EAC117388A1800482FE5 /* Piano.ff.C3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAAE17388A1800482FE5 /* Piano.ff.C3.aiff */; };
+		4983EAC217388A1800482FE5 /* Piano.ff.E3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAAF17388A1800482FE5 /* Piano.ff.E3.aiff */; };
+		4983EAC317388A1800482FE5 /* Piano.ff.D3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAB017388A1800482FE5 /* Piano.ff.D3.aiff */; };
+		4983EAC417388A1800482FE5 /* Piano.ff.Gb3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAB117388A1800482FE5 /* Piano.ff.Gb3.aiff */; };
+		4983EAC517388A1800482FE5 /* Piano.ff.Eb3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAB217388A1800482FE5 /* Piano.ff.Eb3.aiff */; };
+		4983EAC617388A1800482FE5 /* Piano.ff.F3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAB317388A1800482FE5 /* Piano.ff.F3.aiff */; };
+		4983EAC717388A1800482FE5 /* Piano.ff.Ab3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAB417388A1800482FE5 /* Piano.ff.Ab3.aiff */; };
+		4983EAC817388A1800482FE5 /* Piano.ff.G3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAB517388A1800482FE5 /* Piano.ff.G3.aiff */; };
+		4983EAC917388A1800482FE5 /* Piano.ff.B3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAB617388A1800482FE5 /* Piano.ff.B3.aiff */; };
+		4983EACA17388A1800482FE5 /* Piano.ff.A3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAB717388A1800482FE5 /* Piano.ff.A3.aiff */; };
+		4983EACB17388A1800482FE5 /* Piano.ff.Bb3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EAB817388A1800482FE5 /* Piano.ff.Bb3.aiff */; };
+		4983EACD17388A8A00482FE5 /* Piano.ff.E2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EACC17388A8A00482FE5 /* Piano.ff.E2.aiff */; };
+		4983EACF17388B8400482FE5 /* Piano.ff.Db3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4983EACE17388B8400482FE5 /* Piano.ff.Db3.aiff */; };
+		4983EAD11738964000482FE5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4983EAD01738964000482FE5 /* AVFoundation.framework */; };
+		498DDB38173899C6007C2231 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB37173899C6007C2231 /* jump.wav */; };
 		499735D517175FDB001E9178 /* q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 499735D417175FDB001E9178 /* q_note.png */; };
 		7179403C170B148800810BA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403B170B148800810BA0 /* UIKit.framework */; };
 		7179403E170B148800810BA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403D170B148800810BA0 /* Foundation.framework */; };
@@ -56,6 +99,49 @@
 		4983EA751728BE5200482FE5 /* red_q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_q_note.png; sourceTree = "<group>"; };
 		4983EA7717297C5700482FE5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		4983EA7917297D9C00482FE5 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
+		4983EA7C173887EB00482FE5 /* Piano.ff.D4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.D4.aiff; sourceTree = "<group>"; };
+		4983EA7D173887EB00482FE5 /* Piano.ff.Eb4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Eb4.aiff; sourceTree = "<group>"; };
+		4983EA7F173887EB00482FE5 /* Piano.ff.A4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.A4.aiff; sourceTree = "<group>"; };
+		4983EA80173887EB00482FE5 /* Piano.ff.Db4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Db4.aiff; sourceTree = "<group>"; };
+		4983EA81173887EB00482FE5 /* Piano.ff.Gb4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Gb4.aiff; sourceTree = "<group>"; };
+		4983EA82173887EB00482FE5 /* Piano.ff.E4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.E4.aiff; sourceTree = "<group>"; };
+		4983EA83173887EB00482FE5 /* Piano.ff.G4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.G4.aiff; sourceTree = "<group>"; };
+		4983EA84173887EB00482FE5 /* Piano.ff.Ab4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Ab4.aiff; sourceTree = "<group>"; };
+		4983EA85173887EB00482FE5 /* Piano.ff.F4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.F4.aiff; sourceTree = "<group>"; };
+		4983EA86173887EB00482FE5 /* Piano.ff.B4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.B4.aiff; sourceTree = "<group>"; };
+		4983EA87173887EB00482FE5 /* Piano.ff.Bb4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Bb4.aiff; sourceTree = "<group>"; };
+		4983EA88173887EB00482FE5 /* Piano.ff.C5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.C5.aiff; sourceTree = "<group>"; };
+		4983EA89173887EB00482FE5 /* Piano.ff.D5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.D5.aiff; sourceTree = "<group>"; };
+		4983EA8A173887EB00482FE5 /* Piano.ff.Db5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Db5.aiff; sourceTree = "<group>"; };
+		4983EA8B173887EB00482FE5 /* Piano.ff.E5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.E5.aiff; sourceTree = "<group>"; };
+		4983EA8C173887EB00482FE5 /* Piano.ff.Gb5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Gb5.aiff; sourceTree = "<group>"; };
+		4983EA8D173887EB00482FE5 /* Piano.ff.Eb5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Eb5.aiff; sourceTree = "<group>"; };
+		4983EA8E173887EB00482FE5 /* Piano.ff.F5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.F5.aiff; sourceTree = "<group>"; };
+		4983EA8F173887EB00482FE5 /* Piano.ff.G5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.G5.aiff; sourceTree = "<group>"; };
+		4983EA90173887EB00482FE5 /* Piano.ff.C4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.C4.aiff; sourceTree = "<group>"; };
+		4983EAA617388A1800482FE5 /* Piano.ff.A2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.A2.aiff; sourceTree = "<group>"; };
+		4983EAA717388A1800482FE5 /* Piano.ff.Eb2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Eb2.aiff; sourceTree = "<group>"; };
+		4983EAA817388A1800482FE5 /* Piano.ff.F2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.F2.aiff; sourceTree = "<group>"; };
+		4983EAA917388A1800482FE5 /* Piano.ff.Ab2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Ab2.aiff; sourceTree = "<group>"; };
+		4983EAAA17388A1800482FE5 /* Piano.ff.G2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.G2.aiff; sourceTree = "<group>"; };
+		4983EAAB17388A1800482FE5 /* Piano.ff.Gb2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Gb2.aiff; sourceTree = "<group>"; };
+		4983EAAC17388A1800482FE5 /* Piano.ff.B2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.B2.aiff; sourceTree = "<group>"; };
+		4983EAAD17388A1800482FE5 /* Piano.ff.Bb2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Bb2.aiff; sourceTree = "<group>"; };
+		4983EAAE17388A1800482FE5 /* Piano.ff.C3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.C3.aiff; sourceTree = "<group>"; };
+		4983EAAF17388A1800482FE5 /* Piano.ff.E3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.E3.aiff; sourceTree = "<group>"; };
+		4983EAB017388A1800482FE5 /* Piano.ff.D3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.D3.aiff; sourceTree = "<group>"; };
+		4983EAB117388A1800482FE5 /* Piano.ff.Gb3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Gb3.aiff; sourceTree = "<group>"; };
+		4983EAB217388A1800482FE5 /* Piano.ff.Eb3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Eb3.aiff; sourceTree = "<group>"; };
+		4983EAB317388A1800482FE5 /* Piano.ff.F3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.F3.aiff; sourceTree = "<group>"; };
+		4983EAB417388A1800482FE5 /* Piano.ff.Ab3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Ab3.aiff; sourceTree = "<group>"; };
+		4983EAB517388A1800482FE5 /* Piano.ff.G3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.G3.aiff; sourceTree = "<group>"; };
+		4983EAB617388A1800482FE5 /* Piano.ff.B3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.B3.aiff; sourceTree = "<group>"; };
+		4983EAB717388A1800482FE5 /* Piano.ff.A3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.A3.aiff; sourceTree = "<group>"; };
+		4983EAB817388A1800482FE5 /* Piano.ff.Bb3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Bb3.aiff; sourceTree = "<group>"; };
+		4983EACC17388A8A00482FE5 /* Piano.ff.E2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.E2.aiff; sourceTree = "<group>"; };
+		4983EACE17388B8400482FE5 /* Piano.ff.Db3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Piano.ff.Db3.aiff; sourceTree = "<group>"; };
+		4983EAD01738964000482FE5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		498DDB37173899C6007C2231 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = jump.wav; path = "../../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/jump.wav"; sourceTree = "<group>"; };
 		499735D417175FDB001E9178 /* q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q_note.png; sourceTree = "<group>"; };
 		71794038170B148800810BA0 /* Four Part Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Four Part Checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7179403B170B148800810BA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -97,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4983EAD11738964000482FE5 /* AVFoundation.framework in Frameworks */,
 				7179403C170B148800810BA0 /* UIKit.framework in Frameworks */,
 				7179403E170B148800810BA0 /* Foundation.framework in Frameworks */,
 				71794040170B148800810BA0 /* CoreGraphics.framework in Frameworks */,
@@ -117,9 +204,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4983EA7B1738852800482FE5 /* piano */ = {
+			isa = PBXGroup;
+			children = (
+				4983EAA717388A1800482FE5 /* Piano.ff.Eb2.aiff */,
+				4983EACC17388A8A00482FE5 /* Piano.ff.E2.aiff */,
+				4983EAA817388A1800482FE5 /* Piano.ff.F2.aiff */,
+				4983EAAB17388A1800482FE5 /* Piano.ff.Gb2.aiff */,
+				4983EAAA17388A1800482FE5 /* Piano.ff.G2.aiff */,
+				4983EAA917388A1800482FE5 /* Piano.ff.Ab2.aiff */,
+				4983EAA617388A1800482FE5 /* Piano.ff.A2.aiff */,
+				4983EAAD17388A1800482FE5 /* Piano.ff.Bb2.aiff */,
+				4983EAAC17388A1800482FE5 /* Piano.ff.B2.aiff */,
+				4983EAAE17388A1800482FE5 /* Piano.ff.C3.aiff */,
+				4983EACE17388B8400482FE5 /* Piano.ff.Db3.aiff */,
+				4983EAB017388A1800482FE5 /* Piano.ff.D3.aiff */,
+				4983EAB217388A1800482FE5 /* Piano.ff.Eb3.aiff */,
+				4983EAAF17388A1800482FE5 /* Piano.ff.E3.aiff */,
+				4983EAB317388A1800482FE5 /* Piano.ff.F3.aiff */,
+				4983EAB117388A1800482FE5 /* Piano.ff.Gb3.aiff */,
+				4983EAB517388A1800482FE5 /* Piano.ff.G3.aiff */,
+				4983EAB417388A1800482FE5 /* Piano.ff.Ab3.aiff */,
+				4983EAB717388A1800482FE5 /* Piano.ff.A3.aiff */,
+				4983EAB817388A1800482FE5 /* Piano.ff.Bb3.aiff */,
+				4983EAB617388A1800482FE5 /* Piano.ff.B3.aiff */,
+				4983EA90173887EB00482FE5 /* Piano.ff.C4.aiff */,
+				4983EA80173887EB00482FE5 /* Piano.ff.Db4.aiff */,
+				4983EA7C173887EB00482FE5 /* Piano.ff.D4.aiff */,
+				4983EA7D173887EB00482FE5 /* Piano.ff.Eb4.aiff */,
+				4983EA82173887EB00482FE5 /* Piano.ff.E4.aiff */,
+				4983EA85173887EB00482FE5 /* Piano.ff.F4.aiff */,
+				4983EA81173887EB00482FE5 /* Piano.ff.Gb4.aiff */,
+				4983EA83173887EB00482FE5 /* Piano.ff.G4.aiff */,
+				4983EA84173887EB00482FE5 /* Piano.ff.Ab4.aiff */,
+				4983EA7F173887EB00482FE5 /* Piano.ff.A4.aiff */,
+				4983EA87173887EB00482FE5 /* Piano.ff.Bb4.aiff */,
+				4983EA86173887EB00482FE5 /* Piano.ff.B4.aiff */,
+				4983EA88173887EB00482FE5 /* Piano.ff.C5.aiff */,
+				4983EA8A173887EB00482FE5 /* Piano.ff.Db5.aiff */,
+				4983EA89173887EB00482FE5 /* Piano.ff.D5.aiff */,
+				4983EA8D173887EB00482FE5 /* Piano.ff.Eb5.aiff */,
+				4983EA8B173887EB00482FE5 /* Piano.ff.E5.aiff */,
+				4983EA8E173887EB00482FE5 /* Piano.ff.F5.aiff */,
+				4983EA8C173887EB00482FE5 /* Piano.ff.Gb5.aiff */,
+				4983EA8F173887EB00482FE5 /* Piano.ff.G5.aiff */,
+			);
+			name = piano;
+			sourceTree = "<group>";
+		};
 		7179402F170B148800810BA0 = {
 			isa = PBXGroup;
 			children = (
+				4983EAD01738964000482FE5 /* AVFoundation.framework */,
 				71794041170B148800810BA0 /* Four Part Checker */,
 				71794068170B148900810BA0 /* Four Part CheckerTests */,
 				7179403A170B148800810BA0 /* Frameworks */,
@@ -174,6 +310,8 @@
 		71794042170B148800810BA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4983EA7B1738852800482FE5 /* piano */,
+				498DDB37173899C6007C2231 /* jump.wav */,
 				4983EA7917297D9C00482FE5 /* logo1.png */,
 				4983EA751728BE5200482FE5 /* red_q_note.png */,
 				499735D417175FDB001E9178 /* q_note.png */,
@@ -297,6 +435,48 @@
 				4983EA761728BE5200482FE5 /* red_q_note.png in Resources */,
 				4983EA7817297C5700482FE5 /* logo.png in Resources */,
 				4983EA7A17297D9C00482FE5 /* logo1.png in Resources */,
+				4983EA91173887EB00482FE5 /* Piano.ff.D4.aiff in Resources */,
+				4983EA92173887EB00482FE5 /* Piano.ff.Eb4.aiff in Resources */,
+				4983EA94173887EB00482FE5 /* Piano.ff.A4.aiff in Resources */,
+				4983EA95173887EB00482FE5 /* Piano.ff.Db4.aiff in Resources */,
+				4983EA96173887EB00482FE5 /* Piano.ff.Gb4.aiff in Resources */,
+				4983EA97173887EB00482FE5 /* Piano.ff.E4.aiff in Resources */,
+				4983EA98173887EB00482FE5 /* Piano.ff.G4.aiff in Resources */,
+				4983EA99173887EB00482FE5 /* Piano.ff.Ab4.aiff in Resources */,
+				4983EA9A173887EB00482FE5 /* Piano.ff.F4.aiff in Resources */,
+				4983EA9B173887EB00482FE5 /* Piano.ff.B4.aiff in Resources */,
+				4983EA9C173887EB00482FE5 /* Piano.ff.Bb4.aiff in Resources */,
+				4983EA9D173887EB00482FE5 /* Piano.ff.C5.aiff in Resources */,
+				4983EA9E173887EB00482FE5 /* Piano.ff.D5.aiff in Resources */,
+				4983EA9F173887EB00482FE5 /* Piano.ff.Db5.aiff in Resources */,
+				4983EAA0173887EB00482FE5 /* Piano.ff.E5.aiff in Resources */,
+				4983EAA1173887EB00482FE5 /* Piano.ff.Gb5.aiff in Resources */,
+				4983EAA2173887EB00482FE5 /* Piano.ff.Eb5.aiff in Resources */,
+				4983EAA3173887EB00482FE5 /* Piano.ff.F5.aiff in Resources */,
+				4983EAA4173887EB00482FE5 /* Piano.ff.G5.aiff in Resources */,
+				4983EAA5173887EB00482FE5 /* Piano.ff.C4.aiff in Resources */,
+				4983EAB917388A1800482FE5 /* Piano.ff.A2.aiff in Resources */,
+				4983EABA17388A1800482FE5 /* Piano.ff.Eb2.aiff in Resources */,
+				4983EABB17388A1800482FE5 /* Piano.ff.F2.aiff in Resources */,
+				4983EABC17388A1800482FE5 /* Piano.ff.Ab2.aiff in Resources */,
+				4983EABD17388A1800482FE5 /* Piano.ff.G2.aiff in Resources */,
+				4983EABE17388A1800482FE5 /* Piano.ff.Gb2.aiff in Resources */,
+				4983EABF17388A1800482FE5 /* Piano.ff.B2.aiff in Resources */,
+				4983EAC017388A1800482FE5 /* Piano.ff.Bb2.aiff in Resources */,
+				4983EAC117388A1800482FE5 /* Piano.ff.C3.aiff in Resources */,
+				4983EAC217388A1800482FE5 /* Piano.ff.E3.aiff in Resources */,
+				4983EAC317388A1800482FE5 /* Piano.ff.D3.aiff in Resources */,
+				4983EAC417388A1800482FE5 /* Piano.ff.Gb3.aiff in Resources */,
+				4983EAC517388A1800482FE5 /* Piano.ff.Eb3.aiff in Resources */,
+				4983EAC617388A1800482FE5 /* Piano.ff.F3.aiff in Resources */,
+				4983EAC717388A1800482FE5 /* Piano.ff.Ab3.aiff in Resources */,
+				4983EAC817388A1800482FE5 /* Piano.ff.G3.aiff in Resources */,
+				4983EAC917388A1800482FE5 /* Piano.ff.B3.aiff in Resources */,
+				4983EACA17388A1800482FE5 /* Piano.ff.A3.aiff in Resources */,
+				4983EACB17388A1800482FE5 /* Piano.ff.Bb3.aiff in Resources */,
+				4983EACD17388A8A00482FE5 /* Piano.ff.E2.aiff in Resources */,
+				4983EACF17388B8400482FE5 /* Piano.ff.Db3.aiff in Resources */,
+				498DDB38173899C6007C2231 /* jump.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

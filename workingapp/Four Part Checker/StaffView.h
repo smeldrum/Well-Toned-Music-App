@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AVFoundation/AVAudioSession.h>
 @interface StaffView : UIScrollView
 @property NSMutableArray * soprano;
 @property NSMutableArray * alto;
@@ -15,6 +15,9 @@
 @property NSMutableArray * bass;
 @property int currentvoice;
 
+
+-(BOOL)hasParallelFifths:(NSNumber*)note1 withNote2:(NSNumber*)note2 withVoice2:(NSNumber*)note3 withNote4:(NSNumber*)note4;
 -(void)clearStaff;
 -(void)checkStaff;
+-(void)playStaff;
 @end

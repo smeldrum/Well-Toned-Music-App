@@ -84,12 +84,24 @@
     [checkbutton addTarget:self action:@selector(checkStaff:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:checkbutton];
     
+    UIButton * playbutton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    playbutton.frame = CGRectMake(450, 700, 50, 30);
+    [playbutton setTitle:@"Play" forState: UIControlStateNormal];
+    [playbutton addTarget:self action:@selector(playStaff:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:playbutton];
+
+    
     
     UIImageView * logo1 = [[UIImageView alloc] initWithFrame: CGRectMake(830, 645, 163, 119)];
     [logo1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"logo.png"]]];
     [self.view addSubview:logo1];
     
     [self allocateData];
+}
+
+-(void) playStaff: (id)sender
+{
+    [_staff playStaff];
 }
 -(void) clearStaff: (id)sender
 {

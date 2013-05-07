@@ -9,12 +9,14 @@
 #import "StaffView.h"
 #import "Note.h"
 #import <QuartzCore/QuartzCore.h>
+#import <AVFoundation/AVFoundation.h>
+
 @implementation StaffView
 @synthesize currentvoice;
 
 const CGFloat kScrollObjHeight  = 650;
 const CGFloat kScrollObjWidth   = 50;
-const NSUInteger kNumImages     = 1000;
+const NSUInteger kNumImages     = 200;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -120,7 +122,6 @@ const NSUInteger kNumImages     = 1000;
         val += 54;
         val =  ((3*val)/2)+ 2;
     }
-    
     if (currentvoice==0) _bass[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==1) _tenor[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==2) _alto[sender.tag]=[NSNumber numberWithInt:val];
@@ -197,6 +198,7 @@ int detectValue(int y)
 }
 -(void)checkStaff
 {
+    [self allBlack];
     for (int i=0; i<kNumImages;i++)
     {
         UIButton *beat = (UIButton *)[self viewWithTag:i];
@@ -210,24 +212,137 @@ int detectValue(int y)
             
             [[beat layer] setBorderWidth:1.0f];
             [[beat layer] setBorderColor:[UIColor redColor].CGColor];
-            //[[beat subviews]makeObjectsPerformSelector:@selector(badNote)];
         }
         else{
             [[beat layer] setBorderWidth:0.0f];
-            //[[beat subviews]makeObjectsPerformSelector:@selector(goodNote)];
         }
         
     }
+    [self checkParallelFifthsOctaves];
 }
-/*
--(void)badNote:(id)note{
+-(void)checkParallelFifthsOctaves{
+    for(int i=1; i<kNumImages; i++){
+        if (_soprano[i]!=[NSNumber numberWithInt:0] && _alto[i]!=[NSNumber numberWithInt:0] && _tenor[i]!=[NSNumber numberWithInt:0]&&_bass[i]!=[NSNumber numberWithInt:0] && _soprano[i-1]!=[NSNumber numberWithInt:0] && _alto[i-1]!=[NSNumber numberWithInt:0] && _tenor[i-1]!=[NSNumber numberWithInt:0]&&_bass[i-1]!=[NSNumber numberWithInt:0]){
+            if([self hasParallels:_soprano[i] withNote2:_soprano[i-1] withVoice2: _alto[i] withNote4: _alto[i-1]]==true){
+                [self turnRed:3 atIndex:i];
+                [self turnRed:2 atIndex:i];
+                [self turnRed:3 atIndex:i-1];
+                [self turnRed:2 atIndex:i-1];
+            }
+            if([self hasParallels:_soprano[i] withNote2:_soprano[i-1] withVoice2: _tenor[i] withNote4: _tenor[i-1]]==true){
+                [self turnRed:3 atIndex:i];
+                [self turnRed:1 atIndex:i];
+                [self turnRed:3 atIndex:i-1];
+                [self turnRed:1 atIndex:i-1];
+            }
+            if([self hasParallels:_soprano[i] withNote2:_soprano[i-1] withVoice2: _bass[i] withNote4: _bass[i-1]]==true){
+                [self turnRed:3 atIndex:i];
+                [self turnRed:0 atIndex:i];
+                [self turnRed:3 atIndex:i-1];
+                [self turnRed:0 atIndex:i-1];
+            }
+            if([self hasParallels:_alto[i] withNote2:_alto[i-1] withVoice2: _tenor[i] withNote4: _tenor[i-1]]==true){
+                [self turnRed:2 atIndex:i];
+                [self turnRed:1 atIndex:i];
+                [self turnRed:2 atIndex:i-1];
+                [self turnRed:1 atIndex:i-1];
+            }
+            if([self hasParallels:_alto[i] withNote2:_alto[i-1] withVoice2: _bass[i] withNote4: _bass[i-1]]==true){
+                [self turnRed:2 atIndex:i];
+                [self turnRed:0 atIndex:i];
+                [self turnRed:2 atIndex:i-1];
+                [self turnRed:0 atIndex:i-1];
+            }
+            if([self hasParallels:_tenor[i] withNote2:_tenor[i-1] withVoice2: _bass[i] withNote4: _bass[i-1]]==true){
+                [self turnRed:1 atIndex:i];
+                [self turnRed:0 atIndex:i];
+                [self turnRed:1 atIndex:i-1];
+                [self turnRed:0 atIndex:i-1];
+            }
+        }
+    }
+}
+-(void)allBlack 
+{
+    for(UIButton *subview in [self subviews]) {
+        for(Note *notes in [subview subviews]) {
+            UIImage *img = [UIImage imageNamed:@"q_note.png"];
+            [notes setImage:img forState:normal];
 
-    UIImage *img = [UIImage imageNamed:@"red_q_note.png"];
-    [note setImage:img forState:normal];
+        }
+    }
 }
--(void)goodNote:(id)note{
-    UIImage *img = [UIImage imageNamed:@"q_note.png"];
-    [note setImage:img forState:normal];
-}*/
+-(void)turnRed: (int) voice atIndex: (int)index
+{
+    for(UIButton *subview in [self subviews]) {
+        for(Note *notes in [subview subviews]) {
+            if (notes.index == index && notes.voice == voice){
+                UIImage *img = [UIImage imageNamed:@"red_q_note.png"];
+                [notes setImage:img forState:normal];
+            }
+        }
+    }
+}
+-(BOOL)hasParallels:(NSNumber*)note1 withNote2:(NSNumber*)note2 withVoice2:(NSNumber*)note3 withNote4:(NSNumber*)note4{
+    int higher1 = [note2 intValue];
+    int higher2 = [note1 intValue];
+    int lower1 = [note4 intValue];
+    int lower2 = [note3 intValue];
+    
+       NSLog(@"%d, %d, %d, %d", higher1, higher2, lower1, lower2);
+    if((higher1-lower1)%21==0){
+        if((higher2-lower2)%21==0 && higher2!=higher1){
+            return true;
+        }
+    } else if((higher1-lower1)%12==0){
+        if((higher2-lower2)%12==0 &&higher2!=higher1){
+            return true;
+        }
+    }
+    return false;
+}
+
+
+-(void)playStaff
+{
+
+    //for (int i=0; i<kNumImages;i++)
+    //{
+       // if (_soprano[i]==[NSNumber numberWithInt:0]&&_alto[i]==[NSNumber numberWithInt:0]&&_tenor[i]==[NSNumber numberWithInt:0]&&_bass[i]==[NSNumber numberWithInt:0])break;
+    NSLog(@"SUUUUP");
+    
+    // Get path of sound file in bundle.
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"jump" ofType: @"wav"];
+    
+    // Create url from path.
+    NSURL *url = [NSURL URLWithString: path];
+    
+        NSURL *urlS = [NSURL URLWithString:@"Piano.ff.C4.aiff"];
+        AVPlayer *sopranoPlayer = [[AVPlayer alloc] initWithURL:urlS];
+
+        
+        NSURL *urlA = [NSURL URLWithString:@"Piano.ff.E4.aiff"];
+        AVPlayer *altoPlayer = [[AVPlayer alloc] initWithURL:urlA];
+
+        
+        NSURL *urlT = [NSURL URLWithString:@"Piano.ff.G4.aiff"];
+        AVPlayer *tenorPlayer = [[AVPlayer alloc] initWithURL:urlT];
+    
+        
+       // NSURL *urlB = [NSURL URLWithString:@"jump.wav"];
+        AVPlayer *bassPlayer = [[AVPlayer alloc] initWithURL:url];
+        
+        
+        [sopranoPlayer play];
+        [altoPlayer play];
+        [tenorPlayer play];
+        [bassPlayer play];
+        
+
+        
+   // }
+    
+}
+
 @end
 
