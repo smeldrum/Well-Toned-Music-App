@@ -313,7 +313,7 @@ int detectValue(int y)
   
 
     
-        NSURL *urlS = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@play.mp3",[[NSBundle mainBundle] resourcePath]]];
+        NSURL *urlS = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@Four Part Checker/play.mp3",[[NSBundle mainBundle] resourcePath]]];
         AVAudioPlayer *sopranoPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlS error:&audioError];
 
         
