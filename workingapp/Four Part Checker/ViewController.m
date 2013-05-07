@@ -41,7 +41,6 @@
     UIButton * button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button1.frame = CGRectMake(100, 700, 50, 30);
     button1.tag = 3;
-
     [button1 setTitle:@"S" forState: UIControlStateNormal];
     [button1 addTarget:self action:@selector(changeVoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
@@ -69,7 +68,6 @@
     [[button4 layer] setBorderColor:[UIColor greenColor].CGColor];
     [self.view addSubview:button4];
     
-
     
     UIButton * button5 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button5.frame = CGRectMake(330, 700, 50, 30);
@@ -90,6 +88,11 @@
     [playbutton addTarget:self action:@selector(playStaff:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:playbutton];
 
+    UIButton * sharp = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    sharp.frame = CGRectMake(70, 620, 50, 30);
+    [sharp setTitle:@"#" forState: UIControlStateNormal];
+    [sharp addTarget:self action:@selector(selectSharp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:sharp];
     
     
     UIImageView * logo1 = [[UIImageView alloc] initWithFrame: CGRectMake(830, 645, 163, 119)];
@@ -97,7 +100,9 @@
     [self.view addSubview:logo1];
     [self addPickerView];
 }
-
+-(void) selectSharp: (id)sender{
+    [_staff selectSharp];
+}
 -(void) playStaff: (id)sender
 {
     [_staff playStaff];

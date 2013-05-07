@@ -65,7 +65,7 @@
     
 }
 -(void)playBeat{
-    NSTimeInterval shortStartDelay = 0.5;            // seconds
+    NSTimeInterval shortStartDelay = 0.5;          
     NSTimeInterval now = sop.deviceCurrentTime;
     
     if (s!=NULL)[sop playAtTime:now+shortStartDelay];
