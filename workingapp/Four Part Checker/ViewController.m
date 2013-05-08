@@ -12,13 +12,11 @@
 #import <QuartzCore/QuartzCore.h>
 @class StaffView;
 @implementation ViewController
-@synthesize keySigNum;
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initKeySigLists];
     
     NSString *imageName = [NSString stringWithFormat:@"musicstaff.png"];
     UIImage *image = [UIImage imageNamed:imageName];
@@ -174,42 +172,48 @@
         case 0:
             _staff.leadingTone = 8;
             _staff.tonic = 10;
-            keySigNum = 10;
+            _staff.keySigNum = 11;
             break;
         case 1:
             _staff.leadingTone = 9;
             _staff.tonic = 11;
-            keySigNum = 3;
+            _staff.keySigNum = 3;
             break;
         case 2:
             _staff.leadingTone = 11;
             _staff.tonic = 13;
-            keySigNum = 8;
+            _staff.keySigNum = 9;
             break;
         case 3:
             _staff.leadingTone = 12;
             _staff.tonic = 14;
+            _staff.keySigNum = 5;
             
             break;
         case 4:
             _staff.leadingTone = 14;
             _staff.tonic = 17;
+            _staff.keySigNum = 0;
             break;
         case 5:
             _staff.leadingTone = 18;
             _staff.tonic = 20;
+            _staff.keySigNum = 2;
             break;
         case 6:
             _staff.leadingTone = 20;
             _staff.tonic = 1;
+            _staff.keySigNum = 10;
             break;
         case 7:
             _staff.leadingTone = 21;
             _staff.tonic = 2;
+            _staff.keySigNum = 4;
             break;
         case 8:
             _staff.leadingTone = 2;
             _staff.tonic = 5;
+            _staff.keySigNum = 8;
             break;
     }
     myTextField.text = [pickerArray objectAtIndex:row];
@@ -244,25 +248,6 @@
 -(void) done: (UIButton*)sender{
     [myTextField resignFirstResponder];
 }
--(void) initKeySigLists{
-    NSNumber * first = [NSNumber numberWithInt:5];
-    NSNumber * second = [NSNumber numberWithInt:17];
-    NSNumber * third = [NSNumber numberWithInt:8];
-    NSNumber * fourth = [NSNumber numberWithInt:20];
-    NSNumber * fifth = [NSNumber numberWithInt:11];
-    NSNumber * sixth = [NSNumber numberWithInt:2];
-    NSNumber * seventh = [NSNumber numberWithInt:14];
-    _sharpList = [NSArray arrayWithObjects:first, second, third, fourth, fifth, sixth, seventh, nil];
-    first = [NSNumber numberWithInt:14];
-    second = [NSNumber numberWithInt:2];
-    third = [NSNumber numberWithInt:11];
-    fourth = [NSNumber numberWithInt:20];
-    fifth = [NSNumber numberWithInt:8];
-    sixth = [NSNumber numberWithInt:17];
-    seventh = [NSNumber numberWithInt:5];
-    _flatList = [NSArray arrayWithObjects:first, second, third, fourth, fifth, sixth, seventh, nil];
-    keySigNum =0;
-    
-}
+
 
 @end

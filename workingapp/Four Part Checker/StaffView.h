@@ -20,9 +20,13 @@
 @property HarmonyPlayer * musicplayer;
 @property NSMutableArray * inversion;
 @property int currentInversion;
+@property int keySigNum;
 @property BOOL sharp;
+@property NSArray * sharpList;
+@property NSArray * flatList;
 -(void)clearStaff;
 -(void)checkStaff;
 -(void)playStaff;
 -(void)selectSharp;
+
 @end

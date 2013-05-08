@@ -21,8 +21,5 @@
 @property StaffView* staff;
 @property int currentvoice;
 @property int currentInversion;
-@property NSArray * sharpList;
-@property NSArray * flatList;
-@property int keySigNum;
 
 @end

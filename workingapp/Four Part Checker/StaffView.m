@@ -17,6 +17,7 @@
 @synthesize leadingTone;
 @synthesize tonic;
 @synthesize currentInversion;
+@synthesize keySigNum;
 
 const CGFloat kScrollObjHeight  = 650;
 const CGFloat kScrollObjWidth   = 50;
@@ -61,7 +62,7 @@ const NSUInteger kNumImages     = 200;
  
             [self addSubview:beat];
         }
-        
+        [self initKeySigLists];
         [self layoutScrollImages];  // now place the photos in serial layout within the scrollview
 
     }
@@ -156,7 +157,26 @@ const NSUInteger kNumImages     = 200;
         val += 54;
         val =  ((3*val)/2)+ 2;
     }
-
+    if(keySigNum>=8){
+        int modVal = val%21;
+        if(modVal==0) modVal = 21;
+        int length = keySigNum -7;
+        for(int i=0; i<length; i++){
+            if(modVal==[_flatList[i] intValue]){
+                val--;
+            }
+        }
+    } else if(keySigNum>0){
+        int modVal = val%21;
+        if(modVal==0) modVal = 21;
+        int length = keySigNum;
+        for(int i=0; i<length; i++){
+            if(modVal==[_sharpList[i] intValue]){
+                val++;
+            }
+        }
+    }
+    NSLog(@"%d", val);
     if (currentvoice==0) _bass[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==1) _tenor[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==2) _alto[sender.tag]=[NSNumber numberWithInt:val];
@@ -398,11 +418,11 @@ int detectValue(int y)
     else l1 = l1 %21;
     if(h1<l1) h1 = h1 +21;
     if(h1==l1){
-        if(h2==l2 && higher2!=higher1){
+        if(h2==l2 && higher2!=higher1 && lower2!=lower1){
             return true;
         }
     } else if((h1-l1)%12==0){
-        if((h2-l2)%12==0 &&higher2!=higher1){
+        if((h2-l2)%12==0 && higher2!=higher1 && lower2!=lower1){
             return true;
         }
     }
@@ -417,6 +437,7 @@ int detectValue(int y)
     else second = second % 21;
     if(first == leadingTone){
         if(second !=tonic){
+            NSLog(@"%d, %d", first, second);
             return true;
         }
     }
@@ -430,6 +451,26 @@ int detectValue(int y)
 -(void)playStaff
 {
     [_musicplayer play: _soprano a:_alto a:_tenor a:_bass];
+}
+-(void) initKeySigLists{
+    NSNumber * first = [NSNumber numberWithInt:5];
+    NSNumber * second = [NSNumber numberWithInt:17];
+    NSNumber * third = [NSNumber numberWithInt:8];
+    NSNumber * fourth = [NSNumber numberWithInt:20];
+    NSNumber * fifth = [NSNumber numberWithInt:11];
+    NSNumber * sixth = [NSNumber numberWithInt:2];
+    NSNumber * seventh = [NSNumber numberWithInt:14];
+    _sharpList = [NSArray arrayWithObjects:first, second, third, fourth, fifth, sixth, seventh, nil];
+    first = [NSNumber numberWithInt:14];
+    second = [NSNumber numberWithInt:2];
+    third = [NSNumber numberWithInt:11];
+    fourth = [NSNumber numberWithInt:20];
+    fifth = [NSNumber numberWithInt:8];
+    sixth = [NSNumber numberWithInt:17];
+    seventh = [NSNumber numberWithInt:5];
+    _flatList = [NSArray arrayWithObjects:first, second, third, fourth, fifth, sixth, seventh, nil];
+    keySigNum =0;
+    
 }
 
 @end
