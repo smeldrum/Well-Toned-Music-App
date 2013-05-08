@@ -12,14 +12,13 @@
 #import <QuartzCore/QuartzCore.h>
 @class StaffView;
 @implementation ViewController
-
+@synthesize keySigNum;
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-
+    [self initKeySigLists];
     
     NSString *imageName = [NSString stringWithFormat:@"musicstaff.png"];
     UIImage *image = [UIImage imageNamed:imageName];
@@ -33,7 +32,7 @@
     [imageView2 setImage:image2];
     [self.view addSubview:imageView2];
     
-    _staff = [[StaffView alloc] initWithFrame: CGRectMake(200, 5, 800, 700)];
+    _staff = [[StaffView alloc] initWithFrame: CGRectMake(220, 5, 780, 700)];
     [self.view addSubview: _staff];
     
     _currentvoice = 3;
@@ -41,7 +40,6 @@
     UIButton * button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button1.frame = CGRectMake(100, 700, 50, 30);
     button1.tag = 3;
-
     [button1 setTitle:@"S" forState: UIControlStateNormal];
     [button1 addTarget:self action:@selector(changeVoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
@@ -69,7 +67,6 @@
     [[button4 layer] setBorderColor:[UIColor greenColor].CGColor];
     [self.view addSubview:button4];
     
-
     
     UIButton * button5 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button5.frame = CGRectMake(330, 700, 50, 30);
@@ -90,14 +87,26 @@
     [playbutton addTarget:self action:@selector(playStaff:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:playbutton];
 
-    
+    UIButton * sharp = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    sharp.frame = CGRectMake(70, 620, 50, 30);
+    [sharp setTitle:@"#" forState: UIControlStateNormal];
+    [sharp addTarget:self action:@selector(selectSharp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:sharp];
+ 
+    UIButton * flat = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    flat.frame = CGRectMake(140, 620, 50, 30);
+    [flat setTitle:@"♭" forState: UIControlStateNormal];
+    //[flat addTarget:self action:@selector(selectFlat:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:flat];
     
     UIImageView * logo1 = [[UIImageView alloc] initWithFrame: CGRectMake(830, 645, 163, 119)];
     [logo1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"logo.png"]]];
     [self.view addSubview:logo1];
     [self addPickerView];
 }
-
+-(void) selectSharp: (id)sender{
+    [_staff selectSharp];
+}
 -(void) playStaff: (id)sender
 {
     [_staff playStaff];
@@ -129,24 +138,10 @@
     _currentvoice = sender.tag;
     _staff.currentvoice=_currentvoice;
 }
--(void)changeInversion: (UIButton*)sender
-{
-    for (UIButton* button in self.view.subviews){
-        if ([sender isEqual:button]){
-            [[button layer] setBorderWidth:1.0f];
-            [[button layer] setBorderColor:[UIColor greenColor].CGColor];
-        }
-        else{
-            [[button layer] setBorderWidth:0.0f];
-        }
-    }
-    _currentInversion= sender.tag;
-    _staff.currentInversion=_currentInversion;
-}
 
 -(void)addPickerView{
-    pickerArray = [[NSArray alloc]initWithObjects:@"A Major",
-                   @"B Major",@"C Major",@"D Major",@"E major", @"F major",
+    pickerArray = [[NSArray alloc]initWithObjects:@"A♭ Major",@"A Major", @"B♭ Major",
+                   @"B Major",@"C Major",@"D Major",@"E♭ Major",@"E major", @"F major",
                    @"G major", nil];
     myTextField = [[UITextField alloc]initWithFrame:
                    CGRectMake(510, 700, 300, 30)];
@@ -177,32 +172,44 @@
 (NSInteger)row inComponent:(NSInteger)component{
     switch(row){
         case 0:
-            _staff.leadingTone = 9;
-            _staff.tonic = 11;
+            _staff.leadingTone = 8;
+            _staff.tonic = 10;
+            keySigNum = 10;
             break;
         case 1:
-            _staff.leadingTone = 12;
-            _staff.tonic = 14;
+            _staff.leadingTone = 9;
+            _staff.tonic = 11;
+            keySigNum = 3;
             break;
         case 2:
+            _staff.leadingTone = 11;
+            _staff.tonic = 13;
+            keySigNum = 8;
+            break;
+        case 3:
+            _staff.leadingTone = 12;
+            _staff.tonic = 14;
+            
+            break;
+        case 4:
             _staff.leadingTone = 14;
             _staff.tonic = 17;
             break;
-        case 3:
+        case 5:
             _staff.leadingTone = 18;
             _staff.tonic = 20;
             break;
-        case 4:
+        case 6:
+            _staff.leadingTone = 20;
+            _staff.tonic = 1;
+            break;
+        case 7:
             _staff.leadingTone = 21;
             _staff.tonic = 2;
             break;
-        case 5:
+        case 8:
             _staff.leadingTone = 2;
             _staff.tonic = 5;
-            break;
-        case 6:
-            _staff.leadingTone = 6;
-            _staff.tonic = 8;
             break;
     }
     myTextField.text = [pickerArray objectAtIndex:row];
@@ -236,6 +243,26 @@
 
 -(void) done: (UIButton*)sender{
     [myTextField resignFirstResponder];
+}
+-(void) initKeySigLists{
+    NSNumber * first = [NSNumber numberWithInt:5];
+    NSNumber * second = [NSNumber numberWithInt:17];
+    NSNumber * third = [NSNumber numberWithInt:8];
+    NSNumber * fourth = [NSNumber numberWithInt:20];
+    NSNumber * fifth = [NSNumber numberWithInt:11];
+    NSNumber * sixth = [NSNumber numberWithInt:2];
+    NSNumber * seventh = [NSNumber numberWithInt:14];
+    _sharpList = [NSArray arrayWithObjects:first, second, third, fourth, fifth, sixth, seventh, nil];
+    first = [NSNumber numberWithInt:14];
+    second = [NSNumber numberWithInt:2];
+    third = [NSNumber numberWithInt:11];
+    fourth = [NSNumber numberWithInt:20];
+    fifth = [NSNumber numberWithInt:8];
+    sixth = [NSNumber numberWithInt:17];
+    seventh = [NSNumber numberWithInt:5];
+    _flatList = [NSArray arrayWithObjects:first, second, third, fourth, fifth, sixth, seventh, nil];
+    keySigNum =0;
+    
 }
 
 @end

@@ -26,6 +26,7 @@ const NSUInteger kNumImages     = 200;
 {
     self = [super initWithFrame:frame];
     if (self) {
+        _sharp = false;
         _musicplayer = [HarmonyPlayer alloc];
  
         _soprano = [[NSMutableArray alloc] initWithCapacity:kNumImages];
@@ -107,14 +108,40 @@ const NSUInteger kNumImages     = 200;
     y = y-85;
     y =detectValue(y);
     if (y == 0)return;
-    Note *note = [[Note alloc] initWithFrame:CGRectMake(x, y+3, 30, 100)];
-        UIImage *img = [UIImage imageNamed:@"q_note.png"];
-    
-    //check to see if sharp or flat is selected then set proper image
+    Note *note;
+    if (currentvoice==3 ||currentvoice==1){ //stem up!
+        note = [[Note alloc] initWithFrame:CGRectMake(x, y+3, 30, 100)];
+        UIImage *img;
+        if (_sharp == TRUE){
+            img = [UIImage imageNamed:@"q_note_sharp.png"];
+            note.sharp = true;
+        }
+        else{
+            img = [UIImage imageNamed:@"q_note.png"];
+            note.sharp = false;
+        }
+            //check to see if sharp or flat is selected then set proper image
 
-    [note setImage:img forState:UIControlStateNormal];
-    
-    [note addTarget:self action: @selector(notePressed:withevent:) forControlEvents:UIControlEventTouchUpInside];
+        [note setImage:img forState:UIControlStateNormal];
+        [note addTarget:self action: @selector(notePressed:withevent:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    else{ //stem dowwwwn
+        note = [[Note alloc] initWithFrame:CGRectMake(x, y+76, 30, 100)];
+        UIImage *img;
+        if (_sharp == TRUE){
+            img = [UIImage imageNamed:@"down_q_note_sharp.png"];
+            note.sharp = true;
+        }
+        else{
+            img = [UIImage imageNamed:@"down_q_note.png"];
+            note.sharp = false;
+        }
+        //check to see if sharp or flat is selected then set proper image
+        
+        [note setImage:img forState:UIControlStateNormal];
+        [note addTarget:self action: @selector(downnotePressed:withevent:) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
     note.index = sender.tag;
     note.voice = currentvoice;
     [sender addSubview:note];
@@ -135,6 +162,8 @@ const NSUInteger kNumImages     = 200;
     else if (currentvoice==2) _alto[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==3) _soprano[sender.tag]=[NSNumber numberWithInt:val];
     _inversion[sender.tag] = [NSNumber numberWithInt:currentInversion];
+    
+    _sharp = false;
     
 }
 int detectValue(int y)
@@ -173,13 +202,30 @@ int detectValue(int y)
     
 }
 
+
+-(void)downnotePressed: (Note*)sender withevent: event
+{
+    NSSet *touches = [event touchesForView:sender];
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPoint = [touch locationInView:sender];
+    
+    if( [sender pointInside:touchPoint withEvent:event upstem:false] == true){
+        if (sender.voice==0) _bass[sender.index]=[NSNumber numberWithInt:0];
+        else if (sender.voice==1) _tenor[sender.index]=[NSNumber numberWithInt:0];
+        else if (sender.voice==2) _alto[sender.index]=[NSNumber numberWithInt:0];
+        else if (sender.voice==3) _soprano[sender.index]=[NSNumber numberWithInt:0];
+        [sender removeFromSuperview];
+    }
+    
+    
+}
 -(void)notePressed: (Note*)sender withevent: event
 {
     NSSet *touches = [event touchesForView:sender];
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInView:sender];
        
-    if( [sender pointInside:touchPoint withEvent:event] == true){
+    if( [sender pointInside:touchPoint withEvent:event upstem:true] == true){
         if (sender.voice==0) _bass[sender.index]=[NSNumber numberWithInt:0];
         else if (sender.voice==1) _tenor[sender.index]=[NSNumber numberWithInt:0];
         else if (sender.voice==2) _alto[sender.index]=[NSNumber numberWithInt:0];
@@ -229,19 +275,12 @@ int detectValue(int y)
     }
     [self errorChecking];
 }
--(void)checkLeadingTones{
-    for(int i=1; i<kNumImages; i++){
-        if (_soprano[i]!=[NSNumber numberWithInt:0] && _alto[i]!=[NSNumber numberWithInt:0] && _tenor[i]!=[NSNumber numberWithInt:0]&&_bass[i]!=[NSNumber numberWithInt:0] && _soprano[i-1]!=[NSNumber numberWithInt:0] && _alto[i-1]!=[NSNumber numberWithInt:0] && _tenor[i-1]!=[NSNumber numberWithInt:0]&&_bass[i-1]!=[NSNumber numberWithInt:0]){
-            
-        }
-    }
-}
+
 -(void)errorChecking{
     for(int i=1; i<kNumImages; i++){
         if (_soprano[i]!=[NSNumber numberWithInt:0] && _alto[i]!=[NSNumber numberWithInt:0] && _tenor[i]!=[NSNumber numberWithInt:0]&&_bass[i]!=[NSNumber numberWithInt:0] && _soprano[i-1]!=[NSNumber numberWithInt:0] && _alto[i-1]!=[NSNumber numberWithInt:0] && _tenor[i-1]!=[NSNumber numberWithInt:0]&&_bass[i-1]!=[NSNumber numberWithInt:0]){
             [self checkFifthsOctaves:i];
             [self checkLTs:i];
-            [self checkCompleteChord:i];
             
         }
     }
@@ -288,28 +327,33 @@ int detectValue(int y)
 
 -(void)checkLTs: (int)i {
     if([self hasBadLT:_soprano[i] withNote2:_soprano[i-1]]){
-        [self turnGreen:3 atIndex:i];
-        [self turnGreen:3 atIndex:i-1];
+        [self turnRed:3 atIndex:i];
+        [self turnRed:3 atIndex:i-1];
     }
         if([self hasBadLT:_alto[i] withNote2:_alto[i-1]]){
-        [self turnGreen:2 atIndex:i];
-        [self turnGreen:2 atIndex:i-1];
+        [self turnRed:2 atIndex:i];
+        [self turnRed:2 atIndex:i-1];
     }
         if([self hasBadLT:_tenor[i] withNote2:_tenor[i-1]]){
-        [self turnGreen:1 atIndex:i];
-        [self turnGreen:1 atIndex:i-1];
+        [self turnRed:1 atIndex:i];
+        [self turnRed:1 atIndex:i-1];
     }
-}
--(void)checkCompleteChord: (int)i{
-    
 }
 -(void)allBlack
 {
     for(UIButton *subview in [self subviews]) {
         for(Note *notes in [subview subviews]) {
-            UIImage *img = [UIImage imageNamed:@"q_note.png"];
+            UIImage *img;
+            if (notes.voice ==3 ||notes.voice==1){
+                if (notes.sharp==false) img = [UIImage imageNamed:@"q_note.png"];
+                else img = [UIImage imageNamed:@"q_note_sharp.png"];
+            }
+            else{
+                if (notes.sharp==false) img = [UIImage imageNamed:@"down_q_note.png"];
+                else img = [UIImage imageNamed:@"down_q_note_sharp.png"];
+            }
             [notes setImage:img forState:normal];
-
+            
         }
     }
 }
@@ -318,36 +362,47 @@ int detectValue(int y)
     for(UIButton *subview in [self subviews]) {
         for(Note *notes in [subview subviews]) {
             if (notes.index == index && notes.voice == voice){
-                UIImage *img = [UIImage imageNamed:@"red_q_note.png"];
+                UIImage *img;
+                if (notes.voice ==3 ||notes.voice==1){
+                    if (notes.sharp==false) img = [UIImage imageNamed:@"red_q_note.png"];
+                    else img = [UIImage imageNamed:@"red_q_note_sharp.png"];
+                }
+                else{
+                    if (notes.sharp==false) img = [UIImage imageNamed:@"red_down_q_note.png"];
+                    else img = [UIImage imageNamed:@"red_down_q_note_sharp.png"];
+                }
                 [notes setImage:img forState:normal];
             }
         }
     }
 }
--(void)turnGreen: (int) voice atIndex: (int)index
-{
-    for(UIButton *subview in [self subviews]) {
-        for(Note *notes in [subview subviews]) {
-            if (notes.index == index && notes.voice == voice){
-                UIImage *img = [UIImage imageNamed:@"red_q_note.png"];
-                [notes setImage:img forState:normal];
-            }
-        }
-    }
-}
+
+
 -(BOOL)hasParallels:(NSNumber*)note1 withNote2:(NSNumber*)note2 withVoice2:(NSNumber*)note3 withNote4:(NSNumber*)note4{
     int higher1 = [note2 intValue];
     int higher2 = [note1 intValue];
     int lower1 = [note4 intValue];
     int lower2 = [note3 intValue];
-    
-    if((higher1-lower1)%21==0){
-        if((higher2-lower2)%21==0 && higher2!=higher1){
+    int h2 = higher2;
+    int l2 = lower2;
+    if(h2 %21 == 0) h2 = 21;
+    else h2 = h2 %21;
+    if(l2 %21 == 0) l2 = 21;
+    else l2 = l2 %21;
+    if(h2<l2) h2 = h2 +21;
+    int h1 = higher1;
+    int l1 = lower1;
+    if(h1 %21 == 0) h1 = 21;
+    else h1 = h1 %21;
+    if(l1 %21 == 0) l1 = 21;
+    else l1 = l1 %21;
+    if(h1<l1) h1 = h1 +21;
+    if(h1==l1){
+        if(h2==l2 && higher2!=higher1){
             return true;
         }
-    } else if((higher1%-lower1)%12==0){
-        if((higher2-lower2)%12==0 &&higher2!=higher1){
-            NSLog(@"%d, %d, %d, %d", higher1, higher2, lower1, lower2);
+    } else if((h1-l1)%12==0){
+        if((h2-l2)%12==0 &&higher2!=higher1){
             return true;
         }
     }
@@ -360,15 +415,18 @@ int detectValue(int y)
     else first = first % 21;
     if(second %21 ==0)second = 21;
     else second = second % 21;
-    if(first == self.leadingTone){
-        if(second !=self.tonic){
+    if(first == leadingTone){
+        if(second !=tonic){
             return true;
         }
     }
     return false;
 }
 
-
+-(void)selectSharp
+{
+    _sharp = TRUE;
+}
 -(void)playStaff
 {
     [_musicplayer play: _soprano a:_alto a:_tenor a:_bass];

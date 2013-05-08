@@ -12,5 +12,6 @@
 @property (nonatomic, assign) UIEdgeInsets touchcircle;
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, assign) int voice;
-
+@property BOOL sharp;
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event upstem:(BOOL)upstem;
 @end

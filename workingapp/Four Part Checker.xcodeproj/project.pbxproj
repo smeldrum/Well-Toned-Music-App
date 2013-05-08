@@ -57,6 +57,13 @@
 		498DDB431739440E007C2231 /* HarmonyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 498DDB421739440E007C2231 /* HarmonyPlayer.m */; };
 		498DDB4517394AE0007C2231 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498DDB4417394AE0007C2231 /* AudioToolbox.framework */; };
 		498DDB4F17398326007C2231 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB4E17398326007C2231 /* icon.png */; };
+		498DDB5117399E8E007C2231 /* down_q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB5017399E8E007C2231 /* down_q_note.png */; };
+		498DDB551739A464007C2231 /* red_down_q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB541739A464007C2231 /* red_down_q_note.png */; };
+		498DDB571739ADAF007C2231 /* red_down_q_note_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB561739ADAF007C2231 /* red_down_q_note_sharp.png */; };
+		498DDB591739AE0C007C2231 /* down_q_note_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB581739AE0C007C2231 /* down_q_note_sharp.png */; };
+		498DDB5B1739B17A007C2231 /* red_q_note_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB5A1739B17A007C2231 /* red_q_note_sharp.png */; };
+		498DDB5D1739B1B0007C2231 /* q_note_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = 498DDB5C1739B1B0007C2231 /* q_note_sharp.png */; };
+		498DDB5F1739B501007C2231 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498DDB5E1739B500007C2231 /* QuartzCore.framework */; };
 		499735D517175FDB001E9178 /* q_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 499735D417175FDB001E9178 /* q_note.png */; };
 		7179403C170B148800810BA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403B170B148800810BA0 /* UIKit.framework */; };
 		7179403E170B148800810BA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179403D170B148800810BA0 /* Foundation.framework */; };
@@ -147,6 +154,13 @@
 		498DDB421739440E007C2231 /* HarmonyPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HarmonyPlayer.m; sourceTree = "<group>"; };
 		498DDB4417394AE0007C2231 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		498DDB4E17398326007C2231 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		498DDB5017399E8E007C2231 /* down_q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_q_note.png; sourceTree = "<group>"; };
+		498DDB541739A464007C2231 /* red_down_q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_down_q_note.png; sourceTree = "<group>"; };
+		498DDB561739ADAF007C2231 /* red_down_q_note_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_down_q_note_sharp.png; sourceTree = "<group>"; };
+		498DDB581739AE0C007C2231 /* down_q_note_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_q_note_sharp.png; sourceTree = "<group>"; };
+		498DDB5A1739B17A007C2231 /* red_q_note_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_q_note_sharp.png; sourceTree = "<group>"; };
+		498DDB5C1739B1B0007C2231 /* q_note_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q_note_sharp.png; sourceTree = "<group>"; };
+		498DDB5E1739B500007C2231 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		499735D417175FDB001E9178 /* q_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q_note.png; sourceTree = "<group>"; };
 		71794038170B148800810BA0 /* Well Toned.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Well Toned.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7179403B170B148800810BA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -188,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498DDB5F1739B501007C2231 /* QuartzCore.framework in Frameworks */,
 				498DDB4517394AE0007C2231 /* AudioToolbox.framework in Frameworks */,
 				4983EAD11738964000482FE5 /* AVFoundation.framework in Frameworks */,
 				7179403C170B148800810BA0 /* UIKit.framework in Frameworks */,
@@ -262,8 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				498DDB4E17398326007C2231 /* icon.png */,
-				498DDB4417394AE0007C2231 /* AudioToolbox.framework */,
-				4983EAD01738964000482FE5 /* AVFoundation.framework */,
 				71794041170B148800810BA0 /* Four Part Checker */,
 				71794068170B148900810BA0 /* Four Part CheckerTests */,
 				7179403A170B148800810BA0 /* Frameworks */,
@@ -283,6 +296,9 @@
 		7179403A170B148800810BA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				498DDB5E1739B500007C2231 /* QuartzCore.framework */,
+				498DDB4417394AE0007C2231 /* AudioToolbox.framework */,
+				4983EAD01738964000482FE5 /* AVFoundation.framework */,
 				4983EA731727658000482FE5 /* Crashlytics.framework */,
 				7179403B170B148800810BA0 /* UIKit.framework */,
 				7179403D170B148800810BA0 /* Foundation.framework */,
@@ -322,8 +338,14 @@
 			children = (
 				4983EA7B1738852800482FE5 /* piano */,
 				4983EA7917297D9C00482FE5 /* logo1.png */,
+				498DDB5017399E8E007C2231 /* down_q_note.png */,
+				498DDB581739AE0C007C2231 /* down_q_note_sharp.png */,
+				498DDB541739A464007C2231 /* red_down_q_note.png */,
+				498DDB561739ADAF007C2231 /* red_down_q_note_sharp.png */,
+				498DDB5A1739B17A007C2231 /* red_q_note_sharp.png */,
 				4983EA751728BE5200482FE5 /* red_q_note.png */,
 				499735D417175FDB001E9178 /* q_note.png */,
+				498DDB5C1739B1B0007C2231 /* q_note_sharp.png */,
 				71C55F60170E25C100D090BB /* staff2.png */,
 				71794043170B148800810BA0 /* Four Part Checker-Info.plist */,
 				71794044170B148800810BA0 /* InfoPlist.strings */,
@@ -486,6 +508,12 @@
 				4983EACD17388A8A00482FE5 /* Piano.ff.E2.aiff in Resources */,
 				4983EACF17388B8400482FE5 /* Piano.ff.Db3.aiff in Resources */,
 				498DDB4F17398326007C2231 /* icon.png in Resources */,
+				498DDB5117399E8E007C2231 /* down_q_note.png in Resources */,
+				498DDB551739A464007C2231 /* red_down_q_note.png in Resources */,
+				498DDB571739ADAF007C2231 /* red_down_q_note_sharp.png in Resources */,
+				498DDB591739AE0C007C2231 /* down_q_note_sharp.png in Resources */,
+				498DDB5B1739B17A007C2231 /* red_q_note_sharp.png in Resources */,
+				498DDB5D1739B1B0007C2231 /* q_note_sharp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
