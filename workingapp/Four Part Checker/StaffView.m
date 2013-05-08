@@ -16,6 +16,7 @@
 @synthesize currentvoice;
 @synthesize leadingTone;
 @synthesize tonic;
+@synthesize currentInversion;
 
 const CGFloat kScrollObjHeight  = 650;
 const CGFloat kScrollObjWidth   = 50;
@@ -31,11 +32,13 @@ const NSUInteger kNumImages     = 200;
         _alto = [[NSMutableArray alloc] initWithCapacity:kNumImages];
         _tenor = [[NSMutableArray alloc] initWithCapacity:kNumImages];
         _bass = [[NSMutableArray alloc] initWithCapacity:kNumImages];
+        _inversion = [[NSMutableArray alloc] initWithCapacity:kNumImages];
         for (int i = 0; i < kNumImages; i++){
             [_soprano addObject:[NSNumber numberWithInt:0]];
             [_alto addObject:[NSNumber numberWithInt:0]];
             [_tenor addObject:[NSNumber numberWithInt:0]];
             [_bass addObject:[NSNumber numberWithInt:0]];
+            [_inversion addObject:[NSNumber numberWithInt:0]];
         }
         
         
@@ -126,10 +129,12 @@ const NSUInteger kNumImages     = 200;
         val += 54;
         val =  ((3*val)/2)+ 2;
     }
+
     if (currentvoice==0) _bass[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==1) _tenor[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==2) _alto[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==3) _soprano[sender.tag]=[NSNumber numberWithInt:val];
+    _inversion[sender.tag] = [NSNumber numberWithInt:currentInversion];
     
 }
 int detectValue(int y)
@@ -235,6 +240,8 @@ int detectValue(int y)
     for(int i=1; i<kNumImages; i++){
         if (_soprano[i]!=[NSNumber numberWithInt:0] && _alto[i]!=[NSNumber numberWithInt:0] && _tenor[i]!=[NSNumber numberWithInt:0]&&_bass[i]!=[NSNumber numberWithInt:0] && _soprano[i-1]!=[NSNumber numberWithInt:0] && _alto[i-1]!=[NSNumber numberWithInt:0] && _tenor[i-1]!=[NSNumber numberWithInt:0]&&_bass[i-1]!=[NSNumber numberWithInt:0]){
             [self checkFifthsOctaves:i];
+            [self checkLTs:i];
+            [self checkCompleteChord:i];
             
         }
     }
@@ -293,6 +300,9 @@ int detectValue(int y)
         [self turnGreen:1 atIndex:i-1];
     }
 }
+-(void)checkCompleteChord: (int)i{
+    
+}
 -(void)allBlack
 {
     for(UIButton *subview in [self subviews]) {
@@ -319,7 +329,7 @@ int detectValue(int y)
     for(UIButton *subview in [self subviews]) {
         for(Note *notes in [subview subviews]) {
             if (notes.index == index && notes.voice == voice){
-                UIImage *img = [UIImage imageNamed:@"green_q_note.png"];
+                UIImage *img = [UIImage imageNamed:@"red_q_note.png"];
                 [notes setImage:img forState:normal];
             }
         }
@@ -335,18 +345,22 @@ int detectValue(int y)
         if((higher2-lower2)%21==0 && higher2!=higher1){
             return true;
         }
-    } else if((higher1-lower1)%12==0){
+    } else if((higher1%-lower1)%12==0){
         if((higher2-lower2)%12==0 &&higher2!=higher1){
+            NSLog(@"%d, %d, %d, %d", higher1, higher2, lower1, lower2);
             return true;
         }
     }
     return false;
 }
 -(BOOL)hasBadLT:(NSNumber*)note1 withNote2:(NSNumber*)note2{
-    int second = [note2 intValue];
-    int first = [note1 intValue];
-    
-    if((first %21 == self.leadingTone) || (first==21 && first == self.leadingTone)){
+    int second = [note1 intValue];
+    int first = [note2 intValue];
+    if(first %21 ==0)first = 21;
+    else first = first % 21;
+    if(second %21 ==0)second = 21;
+    else second = second % 21;
+    if(first == self.leadingTone){
         if(second !=self.tonic){
             return true;
         }

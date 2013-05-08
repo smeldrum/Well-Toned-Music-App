@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "71794037170B148800810BA0"
-               BuildableName = "Four Part Checker.app"
+               BuildableName = "Well Toned.app"
                BlueprintName = "Four Part Checker"
                ReferencedContainer = "container:Four Part Checker.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71794037170B148800810BA0"
-            BuildableName = "Four Part Checker.app"
+            BuildableName = "Well Toned.app"
             BlueprintName = "Four Part Checker"
             ReferencedContainer = "container:Four Part Checker.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71794037170B148800810BA0"
-            BuildableName = "Four Part Checker.app"
+            BuildableName = "Well Toned.app"
             BlueprintName = "Four Part Checker"
             ReferencedContainer = "container:Four Part Checker.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71794037170B148800810BA0"
-            BuildableName = "Four Part Checker.app"
+            BuildableName = "Well Toned.app"
             BlueprintName = "Four Part Checker"
             ReferencedContainer = "container:Four Part Checker.xcodeproj">
          </BuildableReference>

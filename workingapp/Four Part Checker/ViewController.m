@@ -96,7 +96,6 @@
     [logo1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"logo.png"]]];
     [self.view addSubview:logo1];
     [self addPickerView];
-    [self allocateData];
 }
 
 -(void) playStaff: (id)sender
@@ -130,8 +129,19 @@
     _currentvoice = sender.tag;
     _staff.currentvoice=_currentvoice;
 }
-- (void)allocateData{
-    StaffData * data = [[StaffData alloc] init];
+-(void)changeInversion: (UIButton*)sender
+{
+    for (UIButton* button in self.view.subviews){
+        if ([sender isEqual:button]){
+            [[button layer] setBorderWidth:1.0f];
+            [[button layer] setBorderColor:[UIColor greenColor].CGColor];
+        }
+        else{
+            [[button layer] setBorderWidth:0.0f];
+        }
+    }
+    _currentInversion= sender.tag;
+    _staff.currentInversion=_currentInversion;
 }
 
 -(void)addPickerView{
