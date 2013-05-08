@@ -22,11 +22,13 @@
 @property int currentInversion;
 @property int keySigNum;
 @property BOOL sharp;
+@property BOOL flat;
 @property NSArray * sharpList;
 @property NSArray * flatList;
 -(void)clearStaff;
 -(void)checkStaff;
 -(void)playStaff;
 -(void)selectSharp;
+-(void)selectFlat;
 
 @end

@@ -116,10 +116,17 @@ const NSUInteger kNumImages     = 200;
         if (_sharp == TRUE){
             img = [UIImage imageNamed:@"q_note_sharp.png"];
             note.sharp = true;
+            note.flat = false;
+        }
+        else if (_flat == TRUE){
+            img = [UIImage imageNamed:@"q_note_flat.png"];
+            note.flat = true;
+            note.sharp = false;
         }
         else{
             img = [UIImage imageNamed:@"q_note.png"];
             note.sharp = false;
+            note.flat = false;
         }
             //check to see if sharp or flat is selected then set proper image
 
@@ -132,10 +139,17 @@ const NSUInteger kNumImages     = 200;
         if (_sharp == TRUE){
             img = [UIImage imageNamed:@"down_q_note_sharp.png"];
             note.sharp = true;
+            note.flat = false;
+        }
+        else if (_flat == TRUE){
+            img = [UIImage imageNamed:@"down_q_note_flat.png"];
+            note.flat = true;
+            note.sharp = false;
         }
         else{
             img = [UIImage imageNamed:@"down_q_note.png"];
             note.sharp = false;
+            note.flat = false;
         }
         //check to see if sharp or flat is selected then set proper image
         
@@ -176,7 +190,7 @@ const NSUInteger kNumImages     = 200;
             }
         }
     }
-    NSLog(@"%d", val);
+    //NSLog(@"%d", val);
     if (currentvoice==0) _bass[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==1) _tenor[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==2) _alto[sender.tag]=[NSNumber numberWithInt:val];
@@ -184,6 +198,7 @@ const NSUInteger kNumImages     = 200;
     _inversion[sender.tag] = [NSNumber numberWithInt:currentInversion];
     
     _sharp = false;
+    _flat = false;
     
 }
 int detectValue(int y)
@@ -365,12 +380,14 @@ int detectValue(int y)
         for(Note *notes in [subview subviews]) {
             UIImage *img;
             if (notes.voice ==3 ||notes.voice==1){
-                if (notes.sharp==false) img = [UIImage imageNamed:@"q_note.png"];
-                else img = [UIImage imageNamed:@"q_note_sharp.png"];
+                if (notes.sharp==true) img = [UIImage imageNamed:@"q_note_sharp.png"];
+                else if (notes.flat==true) img = [UIImage imageNamed:@"q_note_flat.png"];
+                else img = [UIImage imageNamed:@"q_note.png"];
             }
             else{
-                if (notes.sharp==false) img = [UIImage imageNamed:@"down_q_note.png"];
-                else img = [UIImage imageNamed:@"down_q_note_sharp.png"];
+                if (notes.sharp==true) img = [UIImage imageNamed:@"down_q_note_sharp.png"];
+                else if (notes.flat==true) img = [UIImage imageNamed:@"down_q_note_flat.png"];
+                else img = [UIImage imageNamed:@"down_q_note.png"];
             }
             [notes setImage:img forState:normal];
             
@@ -384,12 +401,14 @@ int detectValue(int y)
             if (notes.index == index && notes.voice == voice){
                 UIImage *img;
                 if (notes.voice ==3 ||notes.voice==1){
-                    if (notes.sharp==false) img = [UIImage imageNamed:@"red_q_note.png"];
-                    else img = [UIImage imageNamed:@"red_q_note_sharp.png"];
+                    if (notes.sharp==true) img = [UIImage imageNamed:@"red_q_note_sharp.png"];
+                    else if (notes.flat==true) img = [UIImage imageNamed:@"red_q_note_flat.png"];
+                    else img = [UIImage imageNamed:@"red_q_note.png"];
                 }
                 else{
-                    if (notes.sharp==false) img = [UIImage imageNamed:@"red_down_q_note.png"];
-                    else img = [UIImage imageNamed:@"red_down_q_note_sharp.png"];
+                    if (notes.sharp==true) img = [UIImage imageNamed:@"red_down_q_note_sharp.png"];
+                    else if (notes.flat==true) img = [UIImage imageNamed:@"red_down_q_note_flat.png"];
+                    else img = [UIImage imageNamed:@"red_down_q_note.png"];
                 }
                 [notes setImage:img forState:normal];
             }
@@ -437,7 +456,7 @@ int detectValue(int y)
     else second = second % 21;
     if(first == leadingTone){
         if(second !=tonic){
-            NSLog(@"%d, %d", first, second);
+            //NSLog(@"%d, %d", first, second);
             return true;
         }
     }
@@ -446,7 +465,13 @@ int detectValue(int y)
 
 -(void)selectSharp
 {
+    _flat = FALSE;
     _sharp = TRUE;
+}
+-(void)selectFlat
+{
+    _flat = TRUE;
+    _sharp = FALSE;
 }
 -(void)playStaff
 {

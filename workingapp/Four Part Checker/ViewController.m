@@ -94,7 +94,7 @@
     UIButton * flat = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     flat.frame = CGRectMake(140, 620, 50, 30);
     [flat setTitle:@"♭" forState: UIControlStateNormal];
-    //[flat addTarget:self action:@selector(selectFlat:) forControlEvents:UIControlEventTouchUpInside];
+    [flat addTarget:self action:@selector(selectFlat:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:flat];
     
     UIImageView * logo1 = [[UIImageView alloc] initWithFrame: CGRectMake(830, 645, 163, 119)];
@@ -104,6 +104,9 @@
 }
 -(void) selectSharp: (id)sender{
     [_staff selectSharp];
+}
+-(void) selectFlat: (id)sender{
+    [_staff selectFlat];
 }
 -(void) playStaff: (id)sender
 {
