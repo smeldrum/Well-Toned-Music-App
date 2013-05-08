@@ -16,6 +16,8 @@
 @synthesize currentvoice;
 @synthesize leadingTone;
 @synthesize tonic;
+@synthesize currentInversion;
+@synthesize keySigNum;
 
 const CGFloat kScrollObjHeight  = 650;
 const CGFloat kScrollObjWidth   = 50;
@@ -32,11 +34,13 @@ const NSUInteger kNumImages     = 200;
         _alto = [[NSMutableArray alloc] initWithCapacity:kNumImages];
         _tenor = [[NSMutableArray alloc] initWithCapacity:kNumImages];
         _bass = [[NSMutableArray alloc] initWithCapacity:kNumImages];
+        _inversion = [[NSMutableArray alloc] initWithCapacity:kNumImages];
         for (int i = 0; i < kNumImages; i++){
             [_soprano addObject:[NSNumber numberWithInt:0]];
             [_alto addObject:[NSNumber numberWithInt:0]];
             [_tenor addObject:[NSNumber numberWithInt:0]];
             [_bass addObject:[NSNumber numberWithInt:0]];
+            [_inversion addObject:[NSNumber numberWithInt:0]];
         }
         
         
@@ -58,7 +62,7 @@ const NSUInteger kNumImages     = 200;
  
             [self addSubview:beat];
         }
-        
+        [self initKeySigLists];
         [self layoutScrollImages];  // now place the photos in serial layout within the scrollview
 
     }
@@ -153,11 +157,31 @@ const NSUInteger kNumImages     = 200;
         val += 54;
         val =  ((3*val)/2)+ 2;
     }
-
+    if(keySigNum>=8){
+        int modVal = val%21;
+        if(modVal==0) modVal = 21;
+        int length = keySigNum -7;
+        for(int i=0; i<length; i++){
+            if(modVal==[_flatList[i] intValue]){
+                val--;
+            }
+        }
+    } else if(keySigNum>0){
+        int modVal = val%21;
+        if(modVal==0) modVal = 21;
+        int length = keySigNum;
+        for(int i=0; i<length; i++){
+            if(modVal==[_sharpList[i] intValue]){
+                val++;
+            }
+        }
+    }
+    NSLog(@"%d", val);
     if (currentvoice==0) _bass[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==1) _tenor[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==2) _alto[sender.tag]=[NSNumber numberWithInt:val];
     else if (currentvoice==3) _soprano[sender.tag]=[NSNumber numberWithInt:val];
+    _inversion[sender.tag] = [NSNumber numberWithInt:currentInversion];
     
     _sharp = false;
     
@@ -271,18 +295,12 @@ int detectValue(int y)
     }
     [self errorChecking];
 }
--(void)checkLeadingTones{
-    for(int i=1; i<kNumImages; i++){
-        if (_soprano[i]!=[NSNumber numberWithInt:0] && _alto[i]!=[NSNumber numberWithInt:0] && _tenor[i]!=[NSNumber numberWithInt:0]&&_bass[i]!=[NSNumber numberWithInt:0] && _soprano[i-1]!=[NSNumber numberWithInt:0] && _alto[i-1]!=[NSNumber numberWithInt:0] && _tenor[i-1]!=[NSNumber numberWithInt:0]&&_bass[i-1]!=[NSNumber numberWithInt:0]){
-            
-        }
-    }
-}
 
 -(void)errorChecking{
     for(int i=1; i<kNumImages; i++){
         if (_soprano[i]!=[NSNumber numberWithInt:0] && _alto[i]!=[NSNumber numberWithInt:0] && _tenor[i]!=[NSNumber numberWithInt:0]&&_bass[i]!=[NSNumber numberWithInt:0] && _soprano[i-1]!=[NSNumber numberWithInt:0] && _alto[i-1]!=[NSNumber numberWithInt:0] && _tenor[i-1]!=[NSNumber numberWithInt:0]&&_bass[i-1]!=[NSNumber numberWithInt:0]){
             [self checkFifthsOctaves:i];
+            [self checkLTs:i];
             
         }
     }
@@ -329,19 +347,18 @@ int detectValue(int y)
 
 -(void)checkLTs: (int)i {
     if([self hasBadLT:_soprano[i] withNote2:_soprano[i-1]]){
-        [self turnGreen:3 atIndex:i];
-        [self turnGreen:3 atIndex:i-1];
+        [self turnRed:3 atIndex:i];
+        [self turnRed:3 atIndex:i-1];
     }
         if([self hasBadLT:_alto[i] withNote2:_alto[i-1]]){
-        [self turnGreen:2 atIndex:i];
-        [self turnGreen:2 atIndex:i-1];
+        [self turnRed:2 atIndex:i];
+        [self turnRed:2 atIndex:i-1];
     }
         if([self hasBadLT:_tenor[i] withNote2:_tenor[i-1]]){
-        [self turnGreen:1 atIndex:i];
-        [self turnGreen:1 atIndex:i-1];
+        [self turnRed:1 atIndex:i];
+        [self turnRed:1 atIndex:i-1];
     }
 }
-
 -(void)allBlack
 {
     for(UIButton *subview in [self subviews]) {
@@ -380,42 +397,47 @@ int detectValue(int y)
     }
 }
 
--(void)turnGreen: (int) voice atIndex: (int)index
-{
-    for(UIButton *subview in [self subviews]) {
-        for(Note *notes in [subview subviews]) {
-            if (notes.index == index && notes.voice == voice){
-                UIImage *img = [UIImage imageNamed:@"green_q_note.png"];
-                [notes setImage:img forState:normal];
-            }
-        }
-    }
-}
 
 -(BOOL)hasParallels:(NSNumber*)note1 withNote2:(NSNumber*)note2 withVoice2:(NSNumber*)note3 withNote4:(NSNumber*)note4{
     int higher1 = [note2 intValue];
     int higher2 = [note1 intValue];
     int lower1 = [note4 intValue];
     int lower2 = [note3 intValue];
-    
-
-    if((higher1-lower1)%21==0){
-        if((higher2-lower2)%21==0 && higher2!=higher1){
+    int h2 = higher2;
+    int l2 = lower2;
+    if(h2 %21 == 0) h2 = 21;
+    else h2 = h2 %21;
+    if(l2 %21 == 0) l2 = 21;
+    else l2 = l2 %21;
+    if(h2<l2) h2 = h2 +21;
+    int h1 = higher1;
+    int l1 = lower1;
+    if(h1 %21 == 0) h1 = 21;
+    else h1 = h1 %21;
+    if(l1 %21 == 0) l1 = 21;
+    else l1 = l1 %21;
+    if(h1<l1) h1 = h1 +21;
+    if(h1==l1){
+        if(h2==l2 && higher2!=higher1 && lower2!=lower1){
             return true;
         }
-    } else if((higher1-lower1)%12==0){
-        if((higher2-lower2)%12==0 &&higher2!=higher1){
+    } else if((h1-l1)%12==0){
+        if((h2-l2)%12==0 && higher2!=higher1 && lower2!=lower1){
             return true;
         }
     }
     return false;
 }
 -(BOOL)hasBadLT:(NSNumber*)note1 withNote2:(NSNumber*)note2{
-    int second = [note2 intValue];
-    int first = [note1 intValue];
-    
-    if((first %21 == self.leadingTone) || (first==21 && first == self.leadingTone)){
-        if(second !=self.tonic){
+    int second = [note1 intValue];
+    int first = [note2 intValue];
+    if(first %21 ==0)first = 21;
+    else first = first % 21;
+    if(second %21 ==0)second = 21;
+    else second = second % 21;
+    if(first == leadingTone){
+        if(second !=tonic){
+            NSLog(@"%d, %d", first, second);
             return true;
         }
     }
@@ -429,6 +451,26 @@ int detectValue(int y)
 -(void)playStaff
 {
     [_musicplayer play: _soprano a:_alto a:_tenor a:_bass];
+}
+-(void) initKeySigLists{
+    NSNumber * first = [NSNumber numberWithInt:5];
+    NSNumber * second = [NSNumber numberWithInt:17];
+    NSNumber * third = [NSNumber numberWithInt:8];
+    NSNumber * fourth = [NSNumber numberWithInt:20];
+    NSNumber * fifth = [NSNumber numberWithInt:11];
+    NSNumber * sixth = [NSNumber numberWithInt:2];
+    NSNumber * seventh = [NSNumber numberWithInt:14];
+    _sharpList = [NSArray arrayWithObjects:first, second, third, fourth, fifth, sixth, seventh, nil];
+    first = [NSNumber numberWithInt:14];
+    second = [NSNumber numberWithInt:2];
+    third = [NSNumber numberWithInt:11];
+    fourth = [NSNumber numberWithInt:20];
+    fifth = [NSNumber numberWithInt:8];
+    sixth = [NSNumber numberWithInt:17];
+    seventh = [NSNumber numberWithInt:5];
+    _flatList = [NSArray arrayWithObjects:first, second, third, fourth, fifth, sixth, seventh, nil];
+    keySigNum =0;
+    
 }
 
 @end

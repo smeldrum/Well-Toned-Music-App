@@ -18,11 +18,15 @@
 @property int leadingTone;
 @property int tonic;
 @property HarmonyPlayer * musicplayer;
+@property NSMutableArray * inversion;
+@property int currentInversion;
+@property int keySigNum;
 @property BOOL sharp;
-
--(BOOL)hasParallelFifths:(NSNumber*)note1 withNote2:(NSNumber*)note2 withVoice2:(NSNumber*)note3 withNote4:(NSNumber*)note4;
+@property NSArray * sharpList;
+@property NSArray * flatList;
 -(void)clearStaff;
 -(void)checkStaff;
 -(void)playStaff;
 -(void)selectSharp;
+
 @end

@@ -20,5 +20,6 @@
 }
 @property StaffView* staff;
 @property int currentvoice;
+@property int currentInversion;
 
 @end

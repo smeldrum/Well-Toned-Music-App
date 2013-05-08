@@ -14,12 +14,9 @@
 @implementation ViewController
 
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-
     
     NSString *imageName = [NSString stringWithFormat:@"musicstaff.png"];
     UIImage *image = [UIImage imageNamed:imageName];
@@ -33,7 +30,7 @@
     [imageView2 setImage:image2];
     [self.view addSubview:imageView2];
     
-    _staff = [[StaffView alloc] initWithFrame: CGRectMake(200, 5, 800, 700)];
+    _staff = [[StaffView alloc] initWithFrame: CGRectMake(220, 5, 780, 700)];
     [self.view addSubview: _staff];
     
     _currentvoice = 3;
@@ -141,8 +138,8 @@
 }
 
 -(void)addPickerView{
-    pickerArray = [[NSArray alloc]initWithObjects:@"A Major",
-                   @"B Major",@"C Major",@"D Major",@"E major", @"F major",
+    pickerArray = [[NSArray alloc]initWithObjects:@"A♭ Major",@"A Major", @"B♭ Major",
+                   @"B Major",@"C Major",@"D Major",@"E♭ Major",@"E major", @"F major",
                    @"G major", nil];
     myTextField = [[UITextField alloc]initWithFrame:
                    CGRectMake(510, 700, 300, 30)];
@@ -173,32 +170,50 @@
 (NSInteger)row inComponent:(NSInteger)component{
     switch(row){
         case 0:
-            _staff.leadingTone = 9;
-            _staff.tonic = 11;
+            _staff.leadingTone = 8;
+            _staff.tonic = 10;
+            _staff.keySigNum = 11;
             break;
         case 1:
-            _staff.leadingTone = 12;
-            _staff.tonic = 14;
+            _staff.leadingTone = 9;
+            _staff.tonic = 11;
+            _staff.keySigNum = 3;
             break;
         case 2:
-            _staff.leadingTone = 14;
-            _staff.tonic = 17;
+            _staff.leadingTone = 11;
+            _staff.tonic = 13;
+            _staff.keySigNum = 9;
             break;
         case 3:
-            _staff.leadingTone = 18;
-            _staff.tonic = 20;
+            _staff.leadingTone = 12;
+            _staff.tonic = 14;
+            _staff.keySigNum = 5;
+            
             break;
         case 4:
-            _staff.leadingTone = 21;
-            _staff.tonic = 2;
+            _staff.leadingTone = 14;
+            _staff.tonic = 17;
+            _staff.keySigNum = 0;
             break;
         case 5:
-            _staff.leadingTone = 2;
-            _staff.tonic = 5;
+            _staff.leadingTone = 18;
+            _staff.tonic = 20;
+            _staff.keySigNum = 2;
             break;
         case 6:
-            _staff.leadingTone = 6;
-            _staff.tonic = 8;
+            _staff.leadingTone = 20;
+            _staff.tonic = 1;
+            _staff.keySigNum = 10;
+            break;
+        case 7:
+            _staff.leadingTone = 21;
+            _staff.tonic = 2;
+            _staff.keySigNum = 4;
+            break;
+        case 8:
+            _staff.leadingTone = 2;
+            _staff.tonic = 5;
+            _staff.keySigNum = 8;
             break;
     }
     myTextField.text = [pickerArray objectAtIndex:row];
@@ -233,5 +248,6 @@
 -(void) done: (UIButton*)sender{
     [myTextField resignFirstResponder];
 }
+
 
 @end
